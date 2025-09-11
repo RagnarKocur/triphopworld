@@ -1,0 +1,147 @@
+/* ---------- Base & tokens ---------- */
+:root{
+  --bg: #0c0d10;
+  --panel: #14161b;
+  --text: #e9edf1;
+  --muted: #a8b0bb;
+  --accent: #c792ea;  /* delikatny fiołkowy */
+  --ring: rgba(199,146,234,.25);
+  --radius: 14px;
+  --gap: 18px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  color:var(--text);
+  background: radial-gradient(1200px 800px at 20% -10%, #1a1d24 0%, #0c0d10 60%) fixed;
+}
+
+/* Accessibility helpers */
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:1000;
+  background:#fff;color:#000;padding:.6rem .8rem;border-radius:8px;
+}
+.skip-link:focus{left:.8rem;top:.8rem;outline:2px solid var(--accent)}
+
+.visually-hidden{
+  position:absolute!important;clip:rect(1px,1px,1px,1px);
+  padding:0;border:0;height:1px;width:1px;overflow:hidden;white-space:nowrap
+}
+
+/* ---------- Layout ---------- */
+.page{
+  min-height:100dvh;
+  display:grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--gap);
+  padding: var(--gap);
+}
+
+/* Sidebar */
+.sidebar{
+  position: sticky;
+  top: var(--gap);
+  align-self: start;
+  background: color-mix(in oklab, var(--panel) 85%, black 15%);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.02), 0 10px 30px rgba(0,0,0,.4);
+}
+.brand{
+  display:block;
+  font-weight:800;
+  letter-spacing:.3px;
+  text-decoration:none;
+  color:var(--text);
+  margin-bottom:10px;
+}
+.nav ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.nav a{
+  display:block;padding:.55rem .7rem;border-radius:10px;
+  color:var(--text);text-decoration:none;background:transparent;
+  border:1px solid rgba(255,255,255,.06)
+}
+.nav a:is(:hover,:focus){outline:none;border-color:var(--accent)}
+.nav a.is-active{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}
+
+/* Main content wrapper */
+.content{
+  display:grid;gap: var(--gap);
+}
+
+/* ---------- Hero with video ---------- */
+.hero{
+  position:relative;
+  min-height:68svh;
+  border-radius: var(--radius);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  isolation:isolate;
+}
+.hero__video{
+  position:absolute;inset:0;z-index:0;overflow:hidden;
+}
+.hero__video-el{
+  width:100%;height:100%;object-fit:cover;
+  filter: brightness(.55) contrast(1.05) saturate(105%);
+}
+@media (prefers-reduced-motion: reduce){
+  .hero__video-el{display:none;}
+}
+
+.hero__overlay{
+  position:relative;z-index:1;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  gap:.6rem;height:100%;
+  padding: clamp(18px, 4vw, 42px);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 92%);
+}
+.hero h1{
+  margin:0;
+  font-weight:900;
+  font-size: clamp(2rem, 4vw + .6rem, 4rem);
+  letter-spacing:.4px;
+}
+.tagline{margin:0;color:var(--muted)}
+.cta{
+  align-self:flex-start;margin-top:.4rem;
+  padding:.55rem .9rem;border-radius:12px;
+  color:#0b0c10;background:var(--accent);text-decoration:none;font-weight:700;
+  box-shadow: 0 8px 20px var(--ring);
+}
+.cta:is(:hover,:focus){filter:brightness(1.05);outline:none}
+
+/* ---------- Cards ---------- */
+.cards{
+  display:grid;gap:var(--gap);
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+}
+.card{
+  background: color-mix(in oklab, var(--panel) 88%, black 12%);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding:18px;
+}
+.card h3{margin:.1rem 0 .2rem}
+.card__link{color:var(--accent);text-decoration:none}
+.card__link:hover{text-decoration:underline}
+
+/* ---------- Footer ---------- */
+.footer{
+  opacity:.8;
+  border-top:1px dashed rgba(255,255,255,.12);
+  padding-top:.6rem;margin-top:.4rem;
+  font-size:.9rem;color:var(--muted)
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px){
+  .page{grid-template-columns: 1fr}
+  .sidebar{position:static;display:flex;align-items:center;gap:10px}
+  .nav ul{grid-template-columns: repeat(4, minmax(0,1fr))}
+  .nav a{text-align:center;padding:.5rem}
+}
