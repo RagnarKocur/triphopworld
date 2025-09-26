@@ -1,46 +1,87 @@
-/* === Responsive breakpoints ===
-   1024px → tablet (3→2 columns, topbar visible)
-   767px  → mobile (2→1 columns, stacked layout) */
-@media (max-width: 1024px) {
-  /* tablet rules... */
-}
-@media (max-width: 767px) {
-  /* mobile rules...  */
-}
+/* =========================================================
+   Trip-Hop World — style.css (clean)
+   Porządek:
+   0) Zmienne i reset
+   1) Baza typografii/kolorów
+   2) Layout: sidebar/topbar, .wrap
+   3) Wspólne komponenty (siatki, karty, przyciski)
+   4) Elementy globalne (vinyle)
+   5) Strony: Home, Artists, Archive, Playlists, About, Albums
+   6) Media queries: ≤1024 (tablet), ≤767 (mobile)
+   ========================================================= */
 
-/* aspect-ratio keeps album/playlist vinyls perfectly circular across breakpoints */
-.vinyl {
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-}
-/* subtle vinyl hover */
-.vinyl:hover {
-  transform: rotate(2deg) scale(1.01);
-  transition: 0.18s ease;
-}
-
-/* topbar sticky shadow on scroll */
-.topbar {
-  box-shadow: 0 0 0 transparent;
-  transition: box-shadow 0.2s ease;
-}
-@media (max-width: 1024px) {
-  .topbar.scrolled {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  }
-}
-
-/* ====== Base ====== */
+/* ---------- 0) Zmienne + reset ---------- */
 :root {
   --bg: #0f0f10;
   --panel: #151516;
   --ink: #e6e6e6;
   --muted: #b3b3b3;
   --line: #262626;
-  --accent: #8b7bd3; /* subtle violet */
+  --accent: #8b7bd3;
   --maxw: 1200px;
 }
-/* ====== Sidebar buttons with glow on hover (matches your sketch) */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ---------- 1) Baza ---------- */
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.center {
+  text-align: center;
+}
+.btn-link {
+  display: inline-block;
+  margin-top: 0.2rem;
+  color: var(--ink);
+  opacity: 0.8;
+}
+.btn-link:hover {
+  opacity: 1;
+}
+
+/* ---------- 2) Layout: sidebar/topbar ---------- */
+.page {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+aside.nav {
+  background: linear-gradient(180deg, #121214, #0f0f10);
+  border-right: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 1.2rem;
+}
+aside.nav .brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  display: block;
+}
 aside.nav nav a {
   display: block;
   padding: 0.55rem 0.6rem;
@@ -56,7 +97,91 @@ aside.nav nav a:hover {
     inset 0 0 0.25rem rgba(139, 123, 211, 0.15);
 }
 
-/* ====== HERO video block: full width, dark bg frame */
+.topbar {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #111;
+  border-bottom: 1px solid var(--line);
+}
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+}
+.topbar nav a {
+  margin-left: 1rem;
+  color: var(--muted);
+}
+.topbar nav a:hover {
+  color: var(--ink);
+}
+
+/* ---------- 3) Wspólne komponenty ---------- */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.grid-3 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-2 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* ---------- 4) Globalne: VINYLE (okrąg) ---------- */
+.vinyl {
+  position: relative;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.vinyl img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(105%);
+}
+.vinyl::before {
+  content: "";
+  position: absolute;
+  inset: 10% 10%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+.vinyl:hover {
+  transform: rotate(3deg) scale(1.04);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+}
+.vinyl-lg {
+  width: clamp(300px, 24vw, 360px);
+}
+.vinyl-sm {
+  width: clamp(140px, 13vw, 200px);
+}
+
+/* =========================================================
+   5) STRONY
+   ========================================================= */
+
+/* ----- 5.1 Home ----- */
 .hero-media {
   position: relative;
   background: #111;
@@ -80,8 +205,6 @@ aside.nav nav a:hover {
   border-radius: 8px;
   cursor: pointer;
 }
-
-/* ====== Title + subline centered under hero */
 .hero-copy {
   text-align: center;
   padding: 1.2rem 1rem 0.4rem;
@@ -95,8 +218,6 @@ aside.nav nav a:hover {
   color: var(--muted);
   margin: 0.25rem 0 1rem;
 }
-
-/* ====== Featured row: 3 columns on desktop, 2 on tablet, 1 on mobile */
 .featured-row {
   display: grid;
   gap: 1rem;
@@ -125,248 +246,319 @@ aside.nav nav a:hover {
   color: var(--muted);
   margin-bottom: 0.6rem;
 }
-.btn-link {
-  display: inline-block;
-  margin-top: 0.2rem;
-  color: var(--ink);
-  opacity: 0.8;
-}
-.btn-link:hover {
-  opacity: 1;
-}
 
-/* ====== Tablet & Mobile adjustments (keep your breakpoints) */
-@media (max-width: 1024px) {
-  .hero-video {
-    height: 55vh;
-  }
-  .site-title {
-    font-size: 2.2rem;
-  }
-  .featured-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* ----- 5.2 Artists ----- */
+.artists {
+  padding-block: 1.5rem 3rem;
 }
-@media (max-width: 767px) {
-  .hero-video {
-    height: 42vh;
-  }
-  .site-title {
-    font-size: 1.8rem;
-  }
-  .featured-row {
-    grid-template-columns: 1fr;
-  }
+.featured-title {
+  text-align: center;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  margin: 0 0 0.8rem;
 }
-
-* {
-  box-sizing: border-box;
+.featured-card {
+  background: #0e0e0e;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 0.75rem;
+  max-width: 1100px;
+  margin: 0 auto 1.6rem;
+  text-align: center;
 }
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
-    sans-serif;
+.featured-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  filter: grayscale(100%) contrast(105%);
 }
-a {
-  color: inherit;
-  text-decoration: none;
+.featured-card figcaption {
+  color: #cfcfcf;
+  margin-top: 0.5rem;
 }
-img {
-  display: block;
-  max-width: 100%;
+.inline-link {
+  text-decoration: underline;
+}
+.core-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto 1.2rem;
+}
+.rep-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0.6rem auto 0;
+}
+.artist-card {
+  background: #121212;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 0.6rem;
+  text-align: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.artist-card img {
+  width: 100%;
   height: auto;
   border-radius: 8px;
+  filter: grayscale(100%) contrast(105%);
 }
-.wrap {
+.artist-card h3 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+.artist-card .muted {
+  color: #bdbdbd;
+  font-size: 0.9rem;
+}
+.artist-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+.section-title {
+  text-align: center;
+  margin: 1.1rem auto 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* ----- 5.3 Archive ----- */
+.archive {
+  padding-block: 1rem 2.5rem;
+}
+.archive-hero {
+  margin: 0 auto 1rem;
+  padding: 0.5rem;
+  max-width: var(--maxw);
+}
+.archive-hero img {
+  width: 100%;
+  border-radius: 10px;
+  filter: grayscale(100%) contrast(105%);
+}
+.decades {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: var(--maxw);
+  margin: 0 auto 1.25rem;
+}
+.decade-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: clip;
+}
+.decade-card > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 1px solid var(--line);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.decade-card > summary::-webkit-details-marker {
+  display: none;
+}
+.decade-card[open] > summary {
+  background: #141414;
+}
+.decade-content {
+  padding: 0.8rem 0.9rem 1rem;
+}
+.archive-list {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.1rem;
+}
+.archive-list li {
+  margin: 0.25rem 0;
+}
+.video-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 1rem;
 }
-
-/* ====== Layout: Sidebar → Topbar ====== */
-.page {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  min-height: 100vh;
-  gap: 0;
-}
-aside.nav {
-  background: linear-gradient(180deg, #121214, #0f0f10);
-  border-right: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  padding: 1.2rem;
-}
-.brand {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem;
+.video-card {
   display: block;
-}
-.nav a {
-  display: block;
-  padding: 0.55rem 0;
-  border-bottom: 1px dashed var(--line);
-  color: var(--muted);
-}
-.nav a:hover {
-  color: var(--ink);
-}
-main {
-  background: var(--bg);
-}
-
-/* ====== Topbar (tablet/mobile) ====== */
-.topbar {
-  display: none;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: #111;
-  border-bottom: 1px solid var(--line);
-}
-.topbar .wrap {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  justify-content: space-between;
-  padding: 0.75rem 1rem;
-}
-.topbar nav a {
-  margin-left: 1rem;
-  color: var(--muted);
-}
-.topbar nav a:hover {
-  color: var(--ink);
-}
-
-/* ====== Hero ====== */
-.hero {
-  background: #141417;
-  border-bottom: 1px solid var(--line);
-}
-.hero .wrap {
-  padding: 3rem 1rem;
-}
-h1 {
-  font-size: 2.8rem;
-  margin: 0 0 0.5rem;
-}
-.sub {
-  color: var(--muted);
-  margin: 0.25rem 0 1rem;
-}
-.btn {
-  display: inline-block;
-  padding: 0.7rem 1rem;
+  background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
-.btn.ghost {
-  background: transparent;
+.video-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
 }
-.btn.solid {
-  background: var(--panel);
-  border-color: var(--panel);
+.video-thumb {
+  position: relative;
+  aspect-ratio: 16/9;
+}
+.video-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(105%);
 }
 
-/* ====== Grids ====== */
-.grid-3 {
+/* ----- 5.4 Playlists ----- */
+.playlists {
+  padding-block: 1rem 2.5rem;
+}
+.playlist-sections {
   display: grid;
-  gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
 }
-.grid-4 {
+.playlist-circle {
+  text-align: center;
+}
+.vinyl .label {
+  position: absolute;
+  inset: auto 0 10% 0;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  padding: 0.6rem 0.4rem;
+}
+.playlist-links {
+  list-style: none;
+  margin: 0.75rem auto 0;
+  padding: 0;
+}
+.playlist-links li {
+  margin: 0.25rem 0;
+}
+
+/* ----- 5.5 About ----- */
+.about {
+  padding-block: 1rem 2.5rem;
+}
+.about-hero {
   display: grid;
+  grid-template-columns: 220px 1fr;
   gap: 1rem;
-  grid-template-columns: repeat(4, 1fr);
+  max-width: var(--maxw);
+  margin: 0 auto 1rem;
+  padding: 0.75rem;
 }
-.grid-2 {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
+.about-photo img {
+  border-radius: 10px;
+  filter: grayscale(100%) contrast(105%);
 }
-.card {
-  background: var(--panel);
+.about-hero-text h1 {
+  margin: 0.25rem 0 0.35rem;
+}
+.bio {
+  max-width: var(--maxw);
+  margin: 0 auto 1.25rem;
+  padding: 0.9rem 1rem;
+}
+.bio-body p {
+  margin: 0.4rem 0;
+}
+.quote-strip {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  background: #101010;
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1rem 1.2rem;
+  text-align: center;
 }
-.center {
+.quote-strip p {
+  font-size: clamp(1.1rem, 1.6vw + 0.6rem, 1.6rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+/* ----- 5.6 Albums (2×3 duże + 1×5 małe) ----- */
+.albums {
+  padding-block: 1rem 2.5rem;
+}
+.albums .center {
   text-align: center;
 }
 
-/* ====== Vinyl circles ====== */
-.vinyl-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
+/* karta „pudełko CD” */
+.albums .album-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
-.vinyl {
+.albums .album-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
+}
+
+/* okrąg w środku */
+.albums .vinyl {
+  position: relative;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  overflow: hidden;
-  background: #111;
+  background: #0f0f10;
   border: 1px solid var(--line);
-  display: flex;
-  align-items: center;
+  margin: 0 auto;
+}
+.albums .vinyl::before {
+  content: "";
+  position: absolute;
+  inset: 10% 10%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+.albums .vinyl-lg {
+  width: 340px;
+} /* DUŻE — rzędy 1–2 */
+.albums .vinyl-sm {
+  width: 140px;
+} /* MAŁE — rząd 3 */
+.albums .album-title {
+  margin-top: 0.55rem;
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+/* górne dwa rzędy: dokładnie 3 kolumny */
+.albums .album-layout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 2rem 2.4rem;
   justify-content: center;
+  justify-items: center;
+  align-items: start;
+  margin-bottom: 2rem;
 }
-.vinyl span {
-  padding: 0.5rem;
-  color: var(--muted);
-  text-align: center;
-}
-
-/* ====== Poetry columns ====== */
-.poetry-3 {
+/* dolny rząd: dokładnie 5 małych w jednej linii */
+.albums .album-row-mini {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
-}
-.poem {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 1.2rem;
-}
-.quote {
-  font-style: italic;
-  color: var(--muted);
+  grid-template-columns: repeat(5, auto);
+  gap: 1.2rem 1.6rem;
+  justify-content: center;
+  justify-items: center;
+  align-items: start;
 }
 
-/* ====== Archive ====== */
-.hero-panorama {
-  aspect-ratio: 21/9;
-  background: #101014;
-  border-bottom: 1px solid var(--line);
-}
-.decade-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
-}
-.video-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, 1fr);
-}
+/* =========================================================
+   6) Media queries
+   ========================================================= */
 
-/* ====== Footer ====== */
-footer {
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-}
-footer .wrap {
-  padding: 1rem;
-}
-
-/* ====== Tablet ≤1024px ====== */
+/* Tablet ≤1024px */
 @media (max-width: 1024px) {
   .page {
     grid-template-columns: 1fr;
@@ -377,49 +569,81 @@ footer .wrap {
   .topbar {
     display: block;
   }
-  .grid-3 {
+
+  .featured-row {
     grid-template-columns: repeat(2, 1fr);
   }
-  .grid-4 {
+  .core-icons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .rep-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .decades {
     grid-template-columns: repeat(2, 1fr);
   }
-  .vinyl-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .video-strip {
+    grid-template-columns: repeat(3, 1fr);
   }
-  .poetry-3 {
-    grid-template-columns: repeat(2, 1fr);
+  .playlist-sections {
+    grid-template-columns: 1fr 1fr;
   }
-  .decade-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .about-hero {
+    grid-template-columns: 160px 1fr;
   }
-  .hero .wrap {
-    padding: 2.25rem 1rem;
+
+  .albums .album-layout {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 1.6rem 1.8rem;
   }
-  h1 {
-    font-size: 2.2rem;
+  .albums .album-row-mini {
+    grid-template-columns: repeat(2, auto);
+  }
+  .albums .vinyl-lg {
+    width: 300px;
+  }
+  .albums .vinyl-sm {
+    width: 120px;
   }
 }
 
-/* ====== Mobile ≤767px ====== */
+/* Mobile ≤767px */
 @media (max-width: 767px) {
-  .grid-3,
-  .grid-4,
-  .grid-2 {
+  .featured-row {
     grid-template-columns: 1fr;
   }
-  .vinyl-grid {
+  .core-icons {
     grid-template-columns: 1fr;
   }
-  .poetry-3 {
+  .rep-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .decades {
     grid-template-columns: 1fr;
   }
-  .video-grid {
+  .video-strip {
     grid-template-columns: 1fr;
   }
-  h1 {
-    font-size: 1.8rem;
+  .playlist-sections {
+    grid-template-columns: 1fr;
   }
-  .hero .wrap {
-    padding: 1.5rem 1rem;
+  .about-hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-video {
+    height: 46vh;
+  }
+
+  .albums .album-layout {
+    grid-template-columns: 1fr;
+  }
+  .albums .album-row-mini {
+    grid-template-columns: 1fr;
+  }
+  .albums .vinyl-lg {
+    width: min(280px, 72vw);
+  }
+  .albums .vinyl-sm {
+    width: min(120px, 56vw);
   }
 }

@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trip Hop World - Artists</title>
+    <title>Trip Hop World – Artists</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
     <div class="page">
+      <!-- NAV (stałe, jak na innych podstronach) -->
       <aside class="nav">
         <a class="brand" href="../index.html">Trip Hop World</a>
         <nav>
-          <a href="artists.html">Artists</a>
+          <a href="artists.html" aria-current="page">Artists</a>
           <a href="albums.html">Albums</a>
           <a href="poetry.html">Poetry</a>
           <a href="archive.html">Archive</a>
@@ -24,7 +25,7 @@
         <div class="wrap">
           <a class="brand" href="../index.html">Trip Hop World</a>
           <nav>
-            <a href="artists.html">Artists</a>
+            <a href="artists.html" aria-current="page">Artists</a>
             <a href="albums.html">Albums</a>
             <a href="poetry.html">Poetry</a>
             <a href="archive.html">Archive</a>
@@ -34,10 +35,90 @@
         </div>
       </header>
 
-      <section class="content">
-        <h1>Artists</h1>
-        <p>Here we’ll showcase the main representatives of Trip-Hop.</p>
-      </section>
+      <main class="content artists">
+        <!-- FEATURED ARTIST -->
+        <section class="featured">
+          <h1 class="featured-title">PORTISHEAD</h1>
+          <figure class="featured-card">
+            <img
+              src="../assets/images/portishead_band.jpg"
+              alt="Portishead live – black and white photo"
+            />
+            <figcaption>
+              Photo from a live gig ·
+              <a href="#" class="inline-link">Go to artist page ↗</a>
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- CORE ICONS: 3 karty (Massive Attack, Tricky, UNKLE) -->
+        <section class="core-icons">
+          <article class="artist-card">
+            <img
+              src="../assets/images/Massive_Attack_band.jpg"
+              alt="Massive Attack live"
+            />
+            <h3>Massive Attack</h3>
+            <p class="muted">Photo — live gig</p>
+          </article>
+
+          <article class="artist-card">
+            <img src="../assets/images/Tricky.jpg" alt="Tricky live" />
+            <h3>Tricky</h3>
+            <p class="muted">Photo — live gig</p>
+          </article>
+
+          <article class="artist-card">
+            <img src="../assets/images/unkle.jpg" alt="UNKLE live" />
+            <h3>UNKLE</h3>
+            <p class="muted">Photo — live gig</p>
+          </article>
+        </section>
+
+        <h2 class="section-title">The Main Representatives of Trip-Hop</h2>
+
+        <!-- WIDER REPRESENTATIVES: 5 kart w jednym rzędzie -->
+        <section class="rep-grid">
+          <article class="artist-card">
+            <img
+              src="../assets/images/sneaker_pimps.jpg"
+              alt="Sneaker Pimps live"
+            />
+            <h3>Sneaker Pimps</h3>
+            <p class="muted">Photo — live gig</p>
+          </article>
+
+          <article class="artist-card">
+            <img
+              src="../assets/images/thievery_corporation.jpg"
+              alt="Thievery Corporation live"
+            />
+            <h3>Thievery Corporation</h3>
+            <p class="muted">Photo — live gig</p>
+          </article>
+
+          <article class="artist-card">
+            <img src="../assets/images/dj_shadow.jpg" alt="DJ Shadow live" />
+            <h3>DJ Shadow</h3>
+            <p class="muted">Photo — live gig</p>
+          </article>
+
+          <article class="artist-card">
+            <img
+              src="../assets/images/sofa_surfers.jpg"
+              alt="Sofa Surfers live"
+            />
+            <h3>Sofa Surfers</h3>
+            <p class="muted">Photo — live gig</p>
+          </article>
+
+          <article class="artist-card">
+            <img src="../assets/images/flunk.jpg" alt="Flunk live" />
+            <h3>Flunk</h3>
+            <p class="muted">Photo — live gig</p>
+          </article>
+        </section>
+      </main>
     </div>
   </body>
 </html>

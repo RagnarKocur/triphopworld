@@ -4,16 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Trip Hop World — Albums</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/CSS/style.css" />
   </head>
   <body>
     <div class="page">
-      <!-- nav -->
+      <!-- SIDEBAR (desktop) -->
       <aside class="nav">
         <a class="brand" href="../index.html">Trip Hop World</a>
         <nav>
           <a href="artists.html">Artists</a>
-          <a href="albums.html">Albums</a>
+          <a class="is-active" href="albums.html">Albums</a>
           <a href="poetry.html">Poetry</a>
           <a href="archive.html">Archive</a>
           <a href="playlists.html">Playlists</a>
@@ -21,12 +21,13 @@
         </nav>
       </aside>
 
+      <!-- TOPBAR (tablet/mobile) -->
       <header class="topbar">
         <div class="wrap">
-          <a class="brand" href="index.html">Trip Hop World</a>
+          <a class="brand" href="../index.html">Trip Hop World</a>
           <nav>
             <a href="artists.html">Artists</a>
-            <a href="albums.html">Albums</a>
+            <a class="is-active" href="albums.html">Albums</a>
             <a href="poetry.html">Poetry</a>
             <a href="archive.html">Archive</a>
             <a href="playlists.html">Playlists</a>
@@ -34,56 +35,74 @@
           </nav>
         </div>
       </header>
-      <main>
-        <section class="hero">
-          <div class="wrap">
-            <h1>Albums</h1>
-            <p class="sub">Vinyl essentials of trip-hop.</p>
-          </div>
-        </section>
 
-        <section class="wrap" style="padding: 1rem 0 2rem">
-          <div class="vinyl-grid">
-            <div class="center">
-              <div class="vinyl"><span>Portishead — Dummy</span></div>
-            </div>
-            <div class="center">
-              <div class="vinyl"><span>Portishead — Portishead</span></div>
-            </div>
-            <div class="center">
-              <div class="vinyl"><span>Massive Attack — Blue Lines</span></div>
-            </div>
-            <div class="center">
-              <div class="vinyl"><span>Massive Attack — Mezzanine</span></div>
-            </div>
-            <div class="center">
-              <div class="vinyl"><span>Tricky — Maxinquaye</span></div>
-            </div>
-            <div class="center">
-              <div class="vinyl"><span>UNKLE — Psyence Fiction</span></div>
-            </div>
-            <div class="center">
-              <div class="vinyl"><span>Sneaker Pimps — Becoming X</span></div>
-            </div>
-            <div class="center">
-              <div class="vinyl"><span>DJ Shadow — Endtroducing…..</span></div>
-            </div>
-            <div class="center">
-              <div class="vinyl">
-                <span>Thievery Corp — Richest Man in Babylon</span>
-              </div>
-            </div>
-            <div class="center">
-              <div class="vinyl"><span>Sofa Surfers — Cargo</span></div>
-            </div>
-            <div class="center">
-              <div class="vinyl"><span>Flunk — For Sleepyheads Only</span></div>
-            </div>
-          </div>
-        </section>
+      <!-- MAIN -->
+      <main class="albums">
+        <div class="wrap">
+          <h1 class="center">Essential Trip-Hop Albums</h1>
+
+          <!-- RZĘDY 1–2: dokładnie 3 duże + 3 duże -->
+          <section class="album-layout">
+            <!-- rząd 1 -->
+            <article class="album-card lg">
+              <div class="vinyl vinyl-lg"></div>
+              <h3 class="album-title">Portishead — Dummy (1994)</h3>
+            </article>
+
+            <article class="album-card lg">
+              <div class="vinyl vinyl-lg"></div>
+              <h3 class="album-title">Massive Attack — Mezzanine (1998)</h3>
+            </article>
+
+            <article class="album-card lg">
+              <div class="vinyl vinyl-lg"></div>
+              <h3 class="album-title">Portishead — Portishead (1997)</h3>
+            </article>
+
+            <!-- rząd 2 -->
+            <article class="album-card lg">
+              <div class="vinyl vinyl-lg"></div>
+              <h3 class="album-title">Tricky — Maxinquaye (1995)</h3>
+            </article>
+
+            <article class="album-card lg">
+              <div class="vinyl vinyl-lg"></div>
+              <h3 class="album-title">UNKLE — Psyence Fiction (1998)</h3>
+            </article>
+
+            <article class="album-card lg">
+              <div class="vinyl vinyl-lg"></div>
+              <h3 class="album-title">Massive Attack — Blue Lines (1991)</h3>
+            </article>
+          </section>
+
+          <!-- RZĄD 3: 5 małych w jednej linii -->
+          <section class="album-row-mini">
+            <article class="album-card mini">
+              <div class="vinyl vinyl-sm"></div>
+              <h3 class="album-title">Sneaker Pimps — Becoming X</h3>
+            </article>
+            <article class="album-card mini">
+              <div class="vinyl vinyl-sm"></div>
+              <h3 class="album-title">DJ Shadow — Endtroducing…</h3>
+            </article>
+            <article class="album-card mini">
+              <div class="vinyl vinyl-sm"></div>
+              <h3 class="album-title">
+                Thievery Corporation — The Mirror Conspiracy
+              </h3>
+            </article>
+            <article class="album-card mini">
+              <div class="vinyl vinyl-sm"></div>
+              <h3 class="album-title">Sofa Surfers — Cargo</h3>
+            </article>
+            <article class="album-card mini">
+              <div class="vinyl vinyl-sm"></div>
+              <h3 class="album-title">Flunk — For Sleepyheads Only</h3>
+            </article>
+          </section>
+        </div>
       </main>
-
-      <footer><div class="wrap">© Trip Hop World</div></footer>
     </div>
   </body>
 </html>

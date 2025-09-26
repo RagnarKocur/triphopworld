@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Trip Hop World — About</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trip Hop World – About</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
     <div class="page">
-      <!-- nav -->
+      <!-- NAV -->
       <aside class="nav">
         <a class="brand" href="../index.html">Trip Hop World</a>
         <nav>
@@ -17,66 +17,66 @@
           <a href="poetry.html">Poetry</a>
           <a href="archive.html">Archive</a>
           <a href="playlists.html">Playlists</a>
-          <a href="about.html">About</a>
+          <a href="about.html" aria-current="page">About</a>
         </nav>
       </aside>
 
+      <!-- TOPBAR -->
       <header class="topbar">
         <div class="wrap">
-          <a class="brand" href="index.html">Trip Hop World</a>
+          <a class="brand" href="../index.html">Trip Hop World</a>
           <nav>
             <a href="artists.html">Artists</a>
             <a href="albums.html">Albums</a>
             <a href="poetry.html">Poetry</a>
             <a href="archive.html">Archive</a>
             <a href="playlists.html">Playlists</a>
-            <a href="about.html">About</a>
+            <a href="about.html" aria-current="page">About</a>
           </nav>
         </div>
       </header>
-      <main>
-        <section class="hero">
-          <div class="wrap">
-            <h1>About Trip Hop World</h1>
-            <p class="sub">
-              A quiet room in a loud city — curated by Sebastian.
+
+      <main class="content about">
+        <!-- HERO: foto autora -->
+        <section class="about-hero card">
+          <figure class="about-photo">
+            <img
+              src="../assets/images/about/author.jpg"
+              alt="Sebastian — author of Trip-Hop World"
+            />
+          </figure>
+          <div class="about-hero-text">
+            <h1>About the Author</h1>
+            <p class="muted">
+              Photographer • Interior Designer • Aspiring Full-Stack Dev
             </p>
           </div>
         </section>
 
-        <section class="wrap" style="padding: 1rem 0 2rem">
-          <div class="grid-2">
-            <div class="card center" style="min-height: 220px">
-              [Portrait / Abstract B&W]
-            </div>
-            <div class="card">
-              <h3>Manifesto</h3>
-              <p>
-                Trip Hop World exists to make visitors fall in love with
-                trip-hop — not just as music, but as atmosphere. Sound, text,
-                and visuals invite you to dance with happy melancholy.
-              </p>
-              <h3>Bio</h3>
-              <p>
-                Curated by Sebastian — photographer, interior designer, and
-                learner of code. This is a living archive of artists, albums,
-                playlists, and quiet poems.
-              </p>
-            </div>
-          </div>
-
-          <div class="card center" style="margin-top: 1rem">
-            <em>“Trip-hop is the poetry of the urban night.”</em>
-          </div>
-
-          <div class="grid-2" style="margin-top: 1rem">
-            <div class="card center">[Contact / Email / Social]</div>
-            <div class="card center">[GitHub / Credits]</div>
+        <!-- BIO blok -->
+        <section class="bio card">
+          <h2 class="section-title">Bio</h2>
+          <div class="bio-body">
+            <p>
+              Trip-Hop World is a personal, curated space where jazz textures
+              meet hip-hop rhythms. I aim to make visitors fall in love with the
+              genre — to “dance with happy melancholy”.
+            </p>
+            <p>
+              This site is built in black &amp; white aesthetics: documentary
+              text, poetry fragments, archival links, and hand-picked playlists.
+              Designed &amp; coded with care.
+            </p>
           </div>
         </section>
-      </main>
 
-      <footer><div class="wrap">© Trip Hop World</div></footer>
+        <!-- Quote strip -->
+        <section class="quote-strip">
+          <blockquote>
+            <p>“Trip-hop is the poetry of the urban night.”</p>
+          </blockquote>
+        </section>
+      </main>
     </div>
   </body>
 </html>

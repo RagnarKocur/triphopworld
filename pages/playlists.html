@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Trip Hop World — Playlists</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trip Hop World – Playlists</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
     <div class="page">
-      <!-- nav -->
+      <!-- NAV -->
       <aside class="nav">
         <a class="brand" href="../index.html">Trip Hop World</a>
         <nav>
@@ -16,53 +16,117 @@
           <a href="albums.html">Albums</a>
           <a href="poetry.html">Poetry</a>
           <a href="archive.html">Archive</a>
-          <a href="playlists.html">Playlists</a>
+          <a href="playlists.html" aria-current="page">Playlists</a>
           <a href="about.html">About</a>
         </nav>
       </aside>
 
+      <!-- TOPBAR -->
       <header class="topbar">
         <div class="wrap">
-          <a class="brand" href="index.html">Trip Hop World</a>
+          <a class="brand" href="../index.html">Trip Hop World</a>
           <nav>
             <a href="artists.html">Artists</a>
             <a href="albums.html">Albums</a>
             <a href="poetry.html">Poetry</a>
             <a href="archive.html">Archive</a>
-            <a href="playlists.html">Playlists</a>
+            <a href="playlists.html" aria-current="page">Playlists</a>
             <a href="about.html">About</a>
           </nav>
         </div>
       </header>
 
-      <main>
-        <section class="hero">
-          <div class="wrap">
-            <h1>Playlists</h1>
-            <p class="sub">Mood. Curation. Legacy.</p>
-          </div>
-        </section>
+      <main class="content playlists">
+        <h1 class="section-title">Trip-Hop Playlists</h1>
 
-        <section class="wrap" style="padding: 1rem 0 2rem">
-          <div class="vinyl-grid">
-            <div class="center">
-              <div class="vinyl"><span>Melancholy Nights</span></div>
+        <!-- 3 okrągłe sekcje: Mood / Curator Picks / Legacy Mixes -->
+        <section class="playlist-sections">
+          <!-- Mood Playlists -->
+          <article class="playlist-circle card">
+            <div class="vinyl vinyl-lg">
+              <img
+                src="../assets/images/playlists/mood.jpg"
+                alt="Mood playlists cover"
+              />
+              <span class="label">Mood<br />Playlists</span>
             </div>
-            <div class="center">
-              <div class="vinyl"><span>Sebastian’s Picks</span></div>
-            </div>
-            <div class="center">
-              <div class="vinyl"><span>Legacy Mixes</span></div>
-            </div>
-          </div>
+            <ul class="playlist-links">
+              <!-- podmień na prawdziwe linki -->
+              <li>
+                <a class="inline-link" href="#" target="_blank" rel="noopener"
+                  >Rainy City</a
+                >
+              </li>
+              <li>
+                <a class="inline-link" href="#" target="_blank" rel="noopener"
+                  >Night Drive</a
+                >
+              </li>
+              <li>
+                <a class="inline-link" href="#" target="_blank" rel="noopener"
+                  >Smoky Room</a
+                >
+              </li>
+            </ul>
+          </article>
 
-          <div class="card" style="margin-top: 1rem">
-            [Featured Playlist Embed Placeholder]
-          </div>
+          <!-- Curator Picks -->
+          <article class="playlist-circle card">
+            <div class="vinyl vinyl-lg">
+              <img
+                src="../assets/images/playlists/curator.jpg"
+                alt="Curator picks cover"
+              />
+              <span class="label">Curator<br />Picks</span>
+            </div>
+            <ul class="playlist-links">
+              <li>
+                <a class="inline-link" href="#" target="_blank" rel="noopener"
+                  >Sebastian • Essentials</a
+                >
+              </li>
+              <li>
+                <a class="inline-link" href="#" target="_blank" rel="noopener"
+                  >Deep Cuts</a
+                >
+              </li>
+              <li>
+                <a class="inline-link" href="#" target="_blank" rel="noopener"
+                  >Live Gems</a
+                >
+              </li>
+            </ul>
+          </article>
+
+          <!-- Legacy Mixes -->
+          <article class="playlist-circle card">
+            <div class="vinyl vinyl-lg">
+              <img
+                src="../assets/images/playlists/legacy.jpg"
+                alt="Legacy mixes cover"
+              />
+              <span class="label">Legacy<br />Mixes</span>
+            </div>
+            <ul class="playlist-links">
+              <li>
+                <a class="inline-link" href="#" target="_blank" rel="noopener"
+                  >Bristol Tapes</a
+                >
+              </li>
+              <li>
+                <a class="inline-link" href="#" target="_blank" rel="noopener"
+                  >Mixtape 1996</a
+                >
+              </li>
+              <li>
+                <a class="inline-link" href="#" target="_blank" rel="noopener"
+                  >Underground Radio</a
+                >
+              </li>
+            </ul>
+          </article>
         </section>
       </main>
-
-      <footer><div class="wrap">© Trip Hop World</div></footer>
     </div>
   </body>
 </html>

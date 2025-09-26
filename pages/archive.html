@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Trip Hop World — Archive</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trip Hop World – Archive</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
     <div class="page">
-      <!-- nav -->
+      <!-- NAV -->
       <aside class="nav">
         <a class="brand" href="../index.html">Trip Hop World</a>
         <nav>
           <a href="artists.html">Artists</a>
           <a href="albums.html">Albums</a>
           <a href="poetry.html">Poetry</a>
-          <a href="archive.html">Archive</a>
+          <a href="archive.html" aria-current="page">Archive</a>
           <a href="playlists.html">Playlists</a>
           <a href="about.html">About</a>
         </nav>
       </aside>
 
+      <!-- TOPBAR (pokazuje się na tablet/mobile) -->
       <header class="topbar">
         <div class="wrap">
           <a class="brand" href="../index.html">Trip Hop World</a>
@@ -28,36 +29,240 @@
             <a href="artists.html">Artists</a>
             <a href="albums.html">Albums</a>
             <a href="poetry.html">Poetry</a>
-            <a href="archive.html">Archive</a>
+            <a href="archive.html" aria-current="page">Archive</a>
             <a href="playlists.html">Playlists</a>
             <a href="about.html">About</a>
           </nav>
         </div>
       </header>
 
-      <main>
-        <div class="hero-panorama"></div>
-        <section class="wrap" style="padding: 1rem 0 2rem">
-          <h1>Archive</h1>
-          <div class="decade-grid" style="margin-top: 1rem">
-            <div class="card">
-              1990s — Bristol origins, early singles, club flyers…
-            </div>
-            <div class="card">2000s — global diffusion, downtempo blends…</div>
-            <div class="card">2010s — revival, crossovers, digital scenes…</div>
-          </div>
+      <main class="content archive">
+        <!-- HERO panoramic -->
+        <section class="archive-hero card">
+          <!-- Podmień na swoją panoramę -->
+          <img
+            src="../assets/images/archive/panorama.jpg"
+            alt="Panoramic photo of the audience at a live trip-hop gig"
+          />
+        </section>
 
-          <h3 style="margin: 2rem 0 0.6rem">Archive Videos</h3>
-          <div class="video-grid">
-            <div class="card">[Video 1]</div>
-            <div class="card">[Video 2]</div>
-            <div class="card">[Video 3]</div>
-            <div class="card">[Video 4]</div>
-          </div>
+        <h1 class="section-title">TRIP HOP ARCHIVE</h1>
+
+        <!-- DECADES: 3 kolumny, każdy <details> rozwija treści -->
+        <section class="decades">
+          <!-- 1990s -->
+          <details class="decade-card" open>
+            <summary><span>1990s</span></summary>
+            <div class="decade-content">
+              <p class="muted">
+                Roots & rise: Bristol scene, Massive Attack, Portishead, Tricky.
+                Click items to explore photos, short texts, and video links.
+              </p>
+
+              <ul class="archive-list">
+                <!-- podmień linki/ścieżki wg potrzeb -->
+                <li>
+                  <a
+                    class="inline-link"
+                    href="https://youtu.be/HZlK6Q9eS1o"
+                    target="_blank"
+                    rel="noopener"
+                    >Portishead – Sour Times (live)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="inline-link"
+                    href="https://youtu.be/zwA1ok-fQ5M"
+                    target="_blank"
+                    rel="noopener"
+                    >Massive Attack – Teardrop (clip)</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="inline-link"
+                    href="https://youtu.be/QYzU2W4QG8I"
+                    target="_blank"
+                    rel="noopener"
+                    >Tricky – Hell Is Around the Corner</a
+                  >
+                </li>
+              </ul>
+
+              <div class="archive-gallery">
+                <figure class="thumb card">
+                  <img
+                    src="../assets/images/archive/1990s_01.jpg"
+                    alt="Backstage, 1990s"
+                  />
+                </figure>
+                <figure class="thumb card">
+                  <img
+                    src="../assets/images/archive/1990s_02.jpg"
+                    alt="Audience, 1990s"
+                  />
+                </figure>
+                <figure class="thumb card">
+                  <img
+                    src="../assets/images/archive/1990s_03.jpg"
+                    alt="Vinyl release, 1990s"
+                  />
+                </figure>
+              </div>
+            </div>
+          </details>
+
+          <!-- 2000s -->
+          <details class="decade-card">
+            <summary><span>2000s</span></summary>
+            <div class="decade-content">
+              <p class="muted">
+                Evolution & hybrids: UNKLE, Thievery Corporation, DJ Shadow
+                tours.
+              </p>
+              <ul class="archive-list">
+                <li>
+                  <a
+                    class="inline-link"
+                    href="https://youtu.be/6D9vAItQG0A"
+                    target="_blank"
+                    rel="noopener"
+                    >UNKLE – Rabbit in Your Headlights</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="inline-link"
+                    href="https://youtu.be/9O7S6b7s6tE"
+                    target="_blank"
+                    rel="noopener"
+                    >DJ Shadow – Six Days</a
+                  >
+                </li>
+              </ul>
+              <div class="archive-gallery">
+                <figure class="thumb card">
+                  <img
+                    src="../assets/images/archive/2000s_01.jpg"
+                    alt="2000s tour poster"
+                  />
+                </figure>
+                <figure class="thumb card">
+                  <img
+                    src="../assets/images/archive/2000s_02.jpg"
+                    alt="2000s crowd"
+                  />
+                </figure>
+                <figure class="thumb card">
+                  <img
+                    src="../assets/images/archive/2000s_03.jpg"
+                    alt="Studio gear 2000s"
+                  />
+                </figure>
+              </div>
+            </div>
+          </details>
+
+          <!-- 2010s -->
+          <details class="decade-card">
+            <summary><span>2010s</span></summary>
+            <div class="decade-content">
+              <p class="muted">
+                Legacy & revival: new acts, reissues, live anniversaries.
+              </p>
+              <ul class="archive-list">
+                <li>
+                  <a
+                    class="inline-link"
+                    href="https://youtu.be/NKgJQJ6nG80"
+                    target="_blank"
+                    rel="noopener"
+                    >Portishead – Machine Gun (live)</a
+                  >
+                </li>
+              </ul>
+              <div class="archive-gallery">
+                <figure class="thumb card">
+                  <img
+                    src="../assets/images/archive/2010s_01.jpg"
+                    alt="2010s stage lights"
+                  />
+                </figure>
+                <figure class="thumb card">
+                  <img
+                    src="../assets/images/archive/2010s_02.jpg"
+                    alt="2010s vinyl reissue"
+                  />
+                </figure>
+                <figure class="thumb card">
+                  <img
+                    src="../assets/images/archive/2010s_03.jpg"
+                    alt="2010s audience"
+                  />
+                </figure>
+              </div>
+            </div>
+          </details>
+        </section>
+
+        <!-- ARCHIVE VIDEO STRIP -->
+        <h2 class="section-title">Archive Video Links</h2>
+        <section class="video-strip">
+          <!-- Podmień miniatury i linki; aspect 16/9 -->
+          <a
+            class="video-card"
+            href="https://www.youtube.com/watch?v=g2AmYPyXoUQ"
+            target="_blank"
+            rel="noopener"
+            aria-label="Watch Portishead live on YouTube"
+          >
+            <div class="video-thumb">
+              <img src="../assets/images/archive/yt_01.jpg" alt="" />
+            </div>
+          </a>
+          <a
+            class="video-card"
+            href="https://www.youtube.com/watch?v=UOeEn2f2pPQ"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="video-thumb">
+              <img src="../assets/images/archive/yt_02.jpg" alt="" />
+            </div>
+          </a>
+          <a
+            class="video-card"
+            href="https://www.youtube.com/watch?v=I2b36J7lpxM"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="video-thumb">
+              <img src="../assets/images/archive/yt_03.jpg" alt="" />
+            </div>
+          </a>
+          <a
+            class="video-card"
+            href="https://www.youtube.com/watch?v=O8W9lHq0hLY"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="video-thumb">
+              <img src="../assets/images/archive/yt_04.jpg" alt="" />
+            </div>
+          </a>
+          <a
+            class="video-card"
+            href="https://www.youtube.com/watch?v=2fP9cS2A1Zk"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="video-thumb">
+              <img src="../assets/images/archive/yt_05.jpg" alt="" />
+            </div>
+          </a>
         </section>
       </main>
-
-      <footer><div class="wrap">© Trip Hop World</div></footer>
     </div>
   </body>
 </html>
