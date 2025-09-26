@@ -1,13 +1,96 @@
+<!-- Responsive layout: sidebar (desktop) switches to topbar (tablet/mobile).
+     Implemented with CSS grid + media queries at 1024px and 767px. -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trip Hop World</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>Trip Hop World</h1>
-  <p>Site under construction – stay tuned.</p>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trip Hop World — Home</title>
+    <link rel="stylesheet" href="assets/CSS/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- sidebar / topbar -->
+      <aside class="nav">
+        <a class="brand" href="index.html">Trip Hop World</a>
+        <nav>
+          <a href="pages/artists.html">Artists</a>
+          <a href="pages/albums.html">Albums</a>
+          <a href="pages/poetry.html">Poetry</a>
+          <a href="pages/archive.html">Archive</a>
+          <a href="pages/playlists.html">Playlists</a>
+          <a href="pages/about.html">About</a>
+        </nav>
+      </aside>
+
+      <header class="topbar">
+        <div class="wrap">
+          <a class="brand" href="index.html">Trip Hop World</a>
+          <nav>
+            <a href="pages/artists.html">Artists</a>
+            <a href="pages/albums.html">Albums</a>
+            <a href="pages/poetry.html">Poetry</a>
+            <a href="pages/archive.html">Archive</a>
+            <a href="pages/playlists.html">Playlists</a>
+            <a href="pages/about.html">About</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <!-- HERO VIDEO -->
+        <section class="hero">
+          <div class="hero-video">
+            <iframe
+              width="1080"
+              height="500"
+              src="https://www.youtube.com/embed/g2AmYPyXoUQ?autoplay=1&mute=1&loop=1&playlist=g2AmYPyXoUQ"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <div class="hero-text">
+            <h1>Trip Hop World</h1>
+            <p>Jazz textures • Hip-hop rhythms • Bristol soul</p>
+          </div>
+        </section>
+
+        <!-- 3 FEATURED ARTISTS -->
+        <section class="wrap">
+          <div class="featured-row">
+            <article class="feature-card">
+              <h3>Massive Attack</h3>
+              <div class="img-placeholder">Photo</div>
+              <a class="btn-link" href="pages/artists.html"
+                >Go to artist page →</a
+              >
+            </article>
+
+            <article class="feature-card">
+              <h3>Portishead</h3>
+              <div class="img-placeholder">Photo</div>
+              <a class="btn-link" href="pages/artists.html"
+                >Go to artist page →</a
+              >
+            </article>
+
+            <article class="feature-card">
+              <h3>Tricky</h3>
+              <div class="img-placeholder">Photo</div>
+              <a class="btn-link" href="pages/artists.html"
+                >Go to artist page →</a
+              >
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="wrap">© Trip Hop World • curated by Sebastian</div>
+      </footer>
+    </div>
+  </body>
 </html>

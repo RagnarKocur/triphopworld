@@ -1,0 +1,425 @@
+/* === Responsive breakpoints ===
+   1024px → tablet (3→2 columns, topbar visible)
+   767px  → mobile (2→1 columns, stacked layout) */
+@media (max-width: 1024px) {
+  /* tablet rules... */
+}
+@media (max-width: 767px) {
+  /* mobile rules...  */
+}
+
+/* aspect-ratio keeps album/playlist vinyls perfectly circular across breakpoints */
+.vinyl {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+/* subtle vinyl hover */
+.vinyl:hover {
+  transform: rotate(2deg) scale(1.01);
+  transition: 0.18s ease;
+}
+
+/* topbar sticky shadow on scroll */
+.topbar {
+  box-shadow: 0 0 0 transparent;
+  transition: box-shadow 0.2s ease;
+}
+@media (max-width: 1024px) {
+  .topbar.scrolled {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ====== Base ====== */
+:root {
+  --bg: #0f0f10;
+  --panel: #151516;
+  --ink: #e6e6e6;
+  --muted: #b3b3b3;
+  --line: #262626;
+  --accent: #8b7bd3; /* subtle violet */
+  --maxw: 1200px;
+}
+/* ====== Sidebar buttons with glow on hover (matches your sketch) */
+aside.nav nav a {
+  display: block;
+  padding: 0.55rem 0.6rem;
+  margin: 0.35rem 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background: linear-gradient(180deg, #131316, #101012);
+}
+aside.nav nav a:hover {
+  color: var(--ink);
+  box-shadow: 0 0 0.6rem rgba(139, 123, 211, 0.35),
+    inset 0 0 0.25rem rgba(139, 123, 211, 0.15);
+}
+
+/* ====== HERO video block: full width, dark bg frame */
+.hero-media {
+  position: relative;
+  background: #111;
+  border-bottom: 1px solid var(--line);
+}
+.hero-video {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  display: block;
+  filter: contrast(0.95) brightness(0.9);
+}
+.sound-toggle {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ====== Title + subline centered under hero */
+.hero-copy {
+  text-align: center;
+  padding: 1.2rem 1rem 0.4rem;
+}
+.site-title {
+  font-size: 2.8rem;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+.sub {
+  color: var(--muted);
+  margin: 0.25rem 0 1rem;
+}
+
+/* ====== Featured row: 3 columns on desktop, 2 on tablet, 1 on mobile */
+.featured-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 0 2rem;
+}
+.feature-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9rem;
+  text-align: center;
+}
+.feature-card h3 {
+  margin: 0 0 0.6rem;
+  font-weight: 700;
+}
+.img-placeholder {
+  height: 160px;
+  border-radius: 8px;
+  background: #0f0f12;
+  border: 1px dashed var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+.btn-link {
+  display: inline-block;
+  margin-top: 0.2rem;
+  color: var(--ink);
+  opacity: 0.8;
+}
+.btn-link:hover {
+  opacity: 1;
+}
+
+/* ====== Tablet & Mobile adjustments (keep your breakpoints) */
+@media (max-width: 1024px) {
+  .hero-video {
+    height: 55vh;
+  }
+  .site-title {
+    font-size: 2.2rem;
+  }
+  .featured-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .hero-video {
+    height: 42vh;
+  }
+  .site-title {
+    font-size: 1.8rem;
+  }
+  .featured-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ====== Layout: Sidebar → Topbar ====== */
+.page {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  gap: 0;
+}
+aside.nav {
+  background: linear-gradient(180deg, #121214, #0f0f10);
+  border-right: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 1.2rem;
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  display: block;
+}
+.nav a {
+  display: block;
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed var(--line);
+  color: var(--muted);
+}
+.nav a:hover {
+  color: var(--ink);
+}
+main {
+  background: var(--bg);
+}
+
+/* ====== Topbar (tablet/mobile) ====== */
+.topbar {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #111;
+  border-bottom: 1px solid var(--line);
+}
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+}
+.topbar nav a {
+  margin-left: 1rem;
+  color: var(--muted);
+}
+.topbar nav a:hover {
+  color: var(--ink);
+}
+
+/* ====== Hero ====== */
+.hero {
+  background: #141417;
+  border-bottom: 1px solid var(--line);
+}
+.hero .wrap {
+  padding: 3rem 1rem;
+}
+h1 {
+  font-size: 2.8rem;
+  margin: 0 0 0.5rem;
+}
+.sub {
+  color: var(--muted);
+  margin: 0.25rem 0 1rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.btn.ghost {
+  background: transparent;
+}
+.btn.solid {
+  background: var(--panel);
+  border-color: var(--panel);
+}
+
+/* ====== Grids ====== */
+.grid-3 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-4 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-2 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.center {
+  text-align: center;
+}
+
+/* ====== Vinyl circles ====== */
+.vinyl-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.vinyl {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vinyl span {
+  padding: 0.5rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ====== Poetry columns ====== */
+.poetry-3 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.poem {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.2rem;
+}
+.quote {
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* ====== Archive ====== */
+.hero-panorama {
+  aspect-ratio: 21/9;
+  background: #101014;
+  border-bottom: 1px solid var(--line);
+}
+.decade-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.video-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* ====== Footer ====== */
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+footer .wrap {
+  padding: 1rem;
+}
+
+/* ====== Tablet ≤1024px ====== */
+@media (max-width: 1024px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+  aside.nav {
+    display: none;
+  }
+  .topbar {
+    display: block;
+  }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .vinyl-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .poetry-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .decade-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero .wrap {
+    padding: 2.25rem 1rem;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ====== Mobile ≤767px ====== */
+@media (max-width: 767px) {
+  .grid-3,
+  .grid-4,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .vinyl-grid {
+    grid-template-columns: 1fr;
+  }
+  .poetry-3 {
+    grid-template-columns: 1fr;
+  }
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .hero .wrap {
+    padding: 1.5rem 1rem;
+  }
+}
