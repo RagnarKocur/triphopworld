@@ -1,6 +1,22 @@
 # Trip Hop World
 
 A black-and-white, vinyl-inspired microsite that invites visitors to fall in love with trip-hop — artists, albums, playlists, and poetry.
+**educational and non-commercial purposes only**.
+
+## 🌍 Live demo
+
+[Trip Hop World on Vercel](https://twoja-domena.vercel.app)
+
+## 📂 Repository
+
+[GitHub Repo](https://github.com/RagnarKocur/triphopworld)
+
+## 🚀 How to run locally
+
+1. Clone this repo:
+   ```bash
+   git clone https://github.com/RagnarKocur/triphopworld.git
+   ```
 
 ## Purpose
 
