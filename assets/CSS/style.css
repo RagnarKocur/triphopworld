@@ -1,16 +1,16 @@
 /* =========================================================
-   Trip-Hop World — style.css (clean)
-   Porządek:
-   0) Zmienne i reset
-   1) Baza typografii/kolorów
+   Trip-Hop World — style.css 
+   Outline:
+   0) Variables + reset
+   1) Base typography and colors
    2) Layout: sidebar/topbar, .wrap
-   3) Wspólne komponenty (siatki, karty, przyciski)
-   4) Elementy globalne (vinyle)
-   5) Strony: Home, Artists, Archive, Playlists, About, Albums
+   3) `Shered components`: .card, .grid-3, .grid-2
+   4) Global elements(vinyl discs)
+   5) Pages: Home, Artists, Archive, Playlists, About, Albums
    6) Media queries: ≤1024 (tablet), ≤767 (mobile)
    ========================================================= */
 
-/* ---------- 0) Zmienne + reset ---------- */
+/* ---------- 0) Variables and reset ---------- */
 :root {
   --bg: #0f0f10;
   --panel: #151516;
@@ -43,7 +43,8 @@ img {
   border-radius: 8px;
 }
 
-/* ---------- 1) Baza ---------- */
+/* --------1 Base---------- */
+/* small helpers for spacing and typography */
 .wrap {
   max-width: var(--maxw);
   margin: 0 auto;
@@ -120,7 +121,7 @@ aside.nav nav a:hover {
   color: var(--ink);
 }
 
-/* ---------- 3) Wspólne komponenty ---------- */
+/* ---------- 3 Shared components  ---------- */
 .card {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -138,7 +139,7 @@ aside.nav nav a:hover {
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* ---------- 4) Globalne: VINYLE (okrąg) ---------- */
+/* ---------- 4) Global: VINYLS (Circle) ---------- */
 .vinyl {
   position: relative;
   aspect-ratio: 1/1;
@@ -178,7 +179,7 @@ aside.nav nav a:hover {
 }
 
 /* =========================================================
-   5) STRONY
+   5) PAGES
    ========================================================= */
 
 /* ----- 5.1 Home ----- */
@@ -484,7 +485,7 @@ aside.nav nav a:hover {
   letter-spacing: 0.06em;
 }
 
-/* ----- 5.6 Albums (2×3 duże + 1×5 małe) ----- */
+/* ----- 5.6 Albums (2×3 large + 1×5 small) ----- */
 .albums {
   padding-block: 1rem 2.5rem;
 }
@@ -492,7 +493,7 @@ aside.nav nav a:hover {
   text-align: center;
 }
 
-/* karta „pudełko CD” */
+/* karta "CD BOX” */
 .albums .album-card {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -506,12 +507,12 @@ aside.nav nav a:hover {
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
 }
 
-/* okrąg w środku */
+/* circle inside */
 .albums .vinyl {
   position: relative;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  overflow: hidden; /* ważne: przycina IMG do koła */
+  overflow: hidden; /* imporatant: sizes image into circles */
 }
 
 .albums .vinyl img {
@@ -519,7 +520,7 @@ aside.nav nav a:hover {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* wypełnia bez zniekształceń */
+  object-fit: cover; /* fills without distortion */
   display: block;
 }
 
@@ -540,17 +541,17 @@ aside.nav nav a:hover {
 }
 .albums .vinyl-lg {
   width: 340px;
-} /* DUŻE — rzędy 1–2 */
+} /* Large — ROWS 1–2 */
 .albums .vinyl-sm {
   width: 140px;
-} /* MAŁE — rząd 3 */
+} /* small — ROW 3 */
 .albums .album-title {
   margin-top: 0.55rem;
   font-weight: 700;
   font-size: 1.02rem;
 }
 
-/* górne dwa rzędy: dokładnie 3 kolumny */
+/* 2 upper ROWS: 3 columns */
 .albums .album-layout {
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
@@ -560,7 +561,7 @@ aside.nav nav a:hover {
   align-items: start;
   margin-bottom: 2rem;
 }
-/* dolny rząd: dokładnie 5 małych w jednej linii */
+/* Lower ROW: 5 small discs inline */
 .albums .album-row-mini {
   display: grid;
   grid-template-columns: repeat(5, auto);
@@ -663,14 +664,14 @@ aside.nav nav a:hover {
     width: min(120px, 56vw);
   }
 }
-/* tablet: 2 kolumny */
+/* tablet: 2 columns */
 @media (max-width: 1024px) {
   .poetry-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-/* mobile: 1 kolumna */
+/* mobile: 1 column */
 @media (max-width: 767px) {
   .poetry-grid {
     grid-template-columns: 1fr;
@@ -678,7 +679,7 @@ aside.nav nav a:hover {
 }
 
 /* ===========================
-   POETRY (3 kolumny desktop)
+   POETRY 
    =========================== */
 .poetry {
   padding: 2.5rem 0 3rem;
@@ -691,7 +692,7 @@ aside.nav nav a:hover {
 
 .poetry-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 kolumny desktop */
+  grid-template-columns: 1fr 1fr 1fr; /* 3 columns desktop */
   gap: 24px;
   align-items: start;
 }
@@ -724,7 +725,7 @@ aside.nav nav a:hover {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* przycisk „Audio (in progress)” */
+/* Button „Audio (in progress)” */
 .poetry .btn {
   display: inline-block;
   margin-top: 8px;
@@ -749,7 +750,7 @@ aside.nav nav a:hover {
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  min-height: 62vh; /* mocna, ale nie “na cały ekran” */
+  min-height: 62vh;
   border-radius: 16px;
   overflow: hidden;
   margin: 24px auto 8px;
@@ -845,7 +846,7 @@ aside.nav nav a:hover {
   color: #fff;
 }
 
-/* ===== FEATURED (3 kafle) ===== */
+/* ===== FEATURED (3 cards) ===== */
 .featured {
   padding: 14px 0 28px;
 }
@@ -890,7 +891,7 @@ aside.nav nav a:hover {
   padding: 0 0.9rem 0.9rem;
 }
 
-/* Responsive spójnie z Twoją siatką */
+/* Responsive with my grid */
 @media (max-width: 1024px) {
   .hero {
     min-height: 56vh;
@@ -934,7 +935,7 @@ aside.nav nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* półprzezroczysta warstwa */
+  background: rgba(0, 0, 0, 0.5); /* semitransparent layer */
   z-index: 0;
 }
 
@@ -949,16 +950,14 @@ aside.nav nav a:hover {
 /* === Hero: fit on one screen without scroll === */
 .hero {
   height: 62vh; /* było 80vh */
-  margin: 16px auto 8px; /* mniejszy górny/bottom margin */
+  margin: 16px auto 8px; /* upper smaller/bottom margin */
 }
 
-/* trochę ciaśniej wewnątrz, żeby tytuł+CTA nie pchały sekcji w dół */
 .hero-text {
   top: 38%;
   transform: translateY(-38%);
 }
 
-/* mniej powietrza nad sekcją z kaflami */
 .featured {
   padding: 10px 0 24px;
 }
@@ -990,25 +989,25 @@ aside.nav nav a:hover {
 /* === HERO: solid baseline, wideo zawsze widoczne === */
 .hero {
   position: relative;
-  min-height: 48vh; /* nadaje realną wysokość sekcji */
-  max-height: 62vh; /* opcjonalne ograniczenie */
+  min-height: 48vh;
+  max-height: 62vh;
   overflow: hidden;
   border-radius: 12px;
-  background: #0f1315; /* gdyby wideo się nie wczytało */
+  background: #0f1315;
 }
 
-/* Wideo rozciągnięte i obejmujące cały kadr (bez letterboxów) */
+/* Video stretched and fills whole widht */
 .hero-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* kluczowe: wypełnij bez zniekształceń */
-  z-index: 0; /* pod overlay i tekstem */
-  display: block;
+  object-fit: cover;
+  z-index: 0;
+  /display: block;
 }
 
-/* Delikatny gradient + przyciemnienie, nie blokuje kliknięć */
+/* Soft gradient + darkening, nie blokuje kliknięć */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -1022,7 +1021,7 @@ aside.nav nav a:hover {
   );
 }
 
-/* Warstwa tekstowa */
+/* Text layer*/
 .hero-text {
   position: relative;
   z-index: 2;
@@ -1052,7 +1051,7 @@ aside.nav nav a:hover {
   flex-wrap: wrap;
 }
 
-/* Responsywne dostrojenie wysokości */
+/* Responsive height set */
 @media (max-width: 1024px) {
   .hero {
     min-height: 46vh;

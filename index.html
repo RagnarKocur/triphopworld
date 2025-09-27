@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+    <!--Page WRAPPer; sets general rule to sidebar and content layuot-->
     <div class="page">
-      <!-- sidebar / topbar -->
+      <!-- SIDEBAR NAV; vertical menu shown on desktop contains all links to subpages-->
       <aside class="nav">
         <a class="brand" href="index.html">Trip Hop World</a>
         <nav>
@@ -23,10 +24,11 @@
           <a href="pages/about.html">About</a>
         </nav>
       </aside>
-
+      <!--TOPBAR; gorizontal nav that replaces the sidebar on tablet or mobile-->
       <header class="topbar">
         <div class="wrap">
           <a class="brand" href="index.html">Trip Hop World</a>
+          <!--Compact navigation for smaller screens-->
           <nav>
             <a href="pages/artists.html">Artists</a>
             <a href="pages/albums.html">Albums</a>
@@ -39,7 +41,7 @@
       </header>
 
       <main>
-        <!-- HERO VIDEO -->
+        <!--HERO VIDEO; muted, looping background video with dark overlay-->
         <section class="hero">
           <video
             id="heroVideo"
@@ -69,7 +71,7 @@
           </div>
         </section>
 
-        <!-- 3 FEATURED ARTISTS -->
+        <!--3 FEATURED ARTISTS; clickable cards linking to Artist page-->
         <section class="featured wrap">
           <h2 class="sr-only">Featured artists</h2>
           <div class="featured-grid">
@@ -101,7 +103,7 @@
             </article>
           </div>
         </section>
-        <!-- Soft footer (inline styles, zero layout impact) -->
+        <!--SOFT FOOTER; Difficuty to manage proper footer, crash present layout, to be sorted later-->
         <section class="soft-footer" arial-label="site note">
           <div class="wrap">
             <p>© 2025 Trip Hop World</p>
@@ -112,9 +114,8 @@
           </div>
         </section>
       </main>
-
+      <!--SMALL SCRIPT; toggles hero video sound (accessibitiy friendly)-->
       <script>
-        // mały skrypt do przycisku dźwięku hero
         const btn = document.getElementById("toggle-audio");
         const vid = document.querySelector(".hero-video");
         btn?.addEventListener("click", () => {
@@ -125,6 +126,6 @@
         });
       </script>
     </div>
-    <!-- zamknięcie .page -->
+    <!--Page Closing-->
   </body>
 </html>
