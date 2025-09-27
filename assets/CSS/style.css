@@ -1063,46 +1063,19 @@ aside.nav nav a:hover {
     min-height: 40vh;
   }
 }
-/* FOOTER STYLES */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  padding: 20px 30px;
+.soft-footer {
   background: #111;
-  color: #aaa;
-  font-size: 0.85rem;
-  border-top: 1px solid #333;
-  margin-top: 40px;
-}
-
-.footer p {
-  margin: 5px 0;
-  line-height: 1.4;
-}
-
-.footer a {
-  color: #aaa;
-  text-decoration: none;
-  margin: 0 6px;
-  transition: color 0.3s ease;
-}
-
-.footer a:hover {
-  color: #fff;
-}
-
-.footer-left {
-  flex: 1 1 150px;
-}
-
-.footer-center {
-  flex: 2 1 300px;
+  color: #666;
+  font-size: 0.9em;
+  padding: 16px 0;
   text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.footer-right {
-  flex: 1 1 250px;
-  text-align: right;
+.soft-footer p {
+  margin: 0 0 6px;
+}
+
+.soft-footer p:last-child {
+  margin: 0;
 }
