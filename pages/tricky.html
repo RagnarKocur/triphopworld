@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip Hop World – Tricky</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
   </head>
   <body>
     <div class="page">
-      <!--SIDEBAR; same for all subpages-->
-      <aside class="nav">
+      <aside class="nav" aria-label="Primary sidebar navigation">
         <a class="brand" href="../index.html">Trip Hop World</a>
-        <nav>
-          <a href="artists.html">Artists</a>
+        <nav aria-label="Main site links">
+          <a class="is-active" href="artists.html">Artists</a>
           <a href="albums.html">Albums</a>
           <a href="poetry.html">Poetry</a>
           <a href="archive.html">Archive</a>
@@ -20,117 +19,65 @@
           <a href="about.html">About</a>
         </nav>
       </aside>
-      <!--TOPBAR; gorizontal nav that replaces the sidebar on tablet or mobile-->
-      <header class="topbar">
+
+      <header class="topbar" aria-label="Mobile top navigation">
         <div class="wrap">
           <a class="brand" href="../index.html">Trip Hop World</a>
-          <nav>
-            <a href="artists.html">Artists</a>
-            <a href="albums.html">Albums</a>
-            <a href="poetry.html">Poetry</a>
-            <a href="archive.html">Archive</a>
-            <a href="playlists.html">Playlists</a>
-            <a href="about.html">About</a>
+          <nav aria-label="Mobile site links">
+            <a href="artists.html">Artists</a><a href="albums.html">Albums</a>
           </nav>
         </div>
       </header>
 
-      <main class="content artists">
-        <!-- ARTIST HERO SECTION -->
+      <main class="content artist-profile">
         <section class="featured">
           <h1 class="featured-title">TRICKY</h1>
           <figure class="featured-card">
             <img
               src="../assets/images/Tricky.jpg"
-              alt="Tricky live – black and white photo"
-            />
-            <figcaption>Photo from a live gig · Bristol, UK</figcaption>
+              alt="Tricky"
+              loading="lazy"
+            >
           </figure>
         </section>
 
-        <!-- ARTIST BIO SECTION -->
-        <section class="bio">
-          <div class="wrap">
-            <h2>About Tricky</h2>
-            <div class="bio-body">
-              <p>
-                Tricky (born Adrian Nicholas Matthews Thaws) is a British
-                rapper, producer, and actor from Bristol, England. He was a
-                founding member of Massive Attack before embarking on a solo
-                career that would establish him as one of the most innovative
-                and influential figures in trip-hop and alternative music.
-              </p>
-              <p>
-                His debut solo album "Maxinquaye" (1995) is considered a
-                masterpiece of the trip-hop genre, featuring his distinctive
-                whispered vocals, dark atmospheres, and innovative production
-                techniques. The album showcased his unique approach to blending
-                hip-hop, electronic music, and alternative rock.
-              </p>
-              <p>
-                Tricky's music is characterized by its experimental nature,
-                political themes, and genre-defying approach. He has
-                collaborated with numerous artists and continues to push musical
-                boundaries, maintaining his status as one of the most original
-                voices in contemporary music.
-              </p>
-            </div>
+        <section class="bio wrap">
+          <h2>The Dark Prince of Trip-Hop</h2>
+          <p>
+            Adrian Thaws, better known as Tricky, brought a claustrophobic,
+            mumbling intensity to the genre, blending hip-hop with punk and
+            avant-garde.
+          </p>
+        </section>
+
+        <section class="discography wrap">
+          <h2 class="section-title">Discography</h2>
+          <div class="album-layout">
+            <article class="album-card">
+              <div class="vinyl vinyl-lg">
+                <img
+                  src="../assets/images/Tricky_Maxinquaye.jpg"
+                  alt="Maxinquaye"
+                >
+              </div>
+              <h3 class="album-title">Maxinquaye (1995)</h3>
+            </article>
+            <article class="album-card">
+              <div class="vinyl vinyl-lg">
+                <img
+                  src="../assets/images/Tricky_pre_millenium.jpg"
+                  alt="Pre-Millennium Tension"
+                >
+              </div>
+              <h3 class="album-title">Pre-Millennium Tension (1996)</h3>
+            </article>
           </div>
         </section>
 
-        <!-- ESSENTIAL ALBUMS SECTION -->
-        <section class="albums">
-          <div class="wrap">
-            <h2 class="section-title">Essential Albums</h2>
-            <div class="album-layout">
-              <article class="album-card">
-                <div class="vinyl vinyl-lg">
-                  <img
-                    src="../assets/images/Tricky_Maxinquaye.jpg"
-                    alt="Tricky - Maxinquaye album cover"
-                  />
-                </div>
-                <h3 class="album-title">Maxinquaye (1995)</h3>
-                <p class="muted">Debut solo album · Trip-hop classic</p>
-              </article>
-
-              <article class="album-card">
-                <div class="vinyl vinyl-lg">
-                  <img
-                    src="../assets/images/Tricky.jpg"
-                    alt="Tricky - Pre-Millennium Tension album cover"
-                  />
-                </div>
-                <h3 class="album-title">Pre-Millennium Tension (1996)</h3>
-                <p class="muted">Dark experimental follow-up</p>
-              </article>
-
-              <article class="album-card">
-                <div class="vinyl vinyl-lg">
-                  <img
-                    src="../assets/images/Tricky_Maxinquaye.jpg"
-                    alt="Tricky - Angels with Dirty Faces album cover"
-                  />
-                </div>
-                <h3 class="album-title">Angels with Dirty Faces (1998)</h3>
-                <p class="muted">Genre-bending exploration</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <!-- SOFT FOOTER -->
-        <section class="soft-footer" arial-label="site note">
-          <div class="wrap">
-            <p>© 2025 Trip Hop World</p>
-            <p>
-              This website is for educational and non-commercial purposes only.
-              All images, music, and media belong to their respective owners.
-            </p>
-          </div>
-        </section>
+        <footer class="soft-footer" aria-label="Site note">
+          <div class="wrap"><p>© 2026 Trip Hop World</p></div>
+        </footer>
       </main>
     </div>
   </body>
 </html>
-

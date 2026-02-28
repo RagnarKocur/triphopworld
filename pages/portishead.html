@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip Hop World – Portishead</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
   </head>
   <body>
     <div class="page">
-      <!--SIDEBAR; same for all subpages-->
-      <aside class="nav">
+      <aside class="nav" aria-label="Primary sidebar navigation">
         <a class="brand" href="../index.html">Trip Hop World</a>
-        <nav>
-          <a href="artists.html">Artists</a>
+        <nav aria-label="Main site links">
+          <a class="is-active" href="artists.html">Artists</a>
           <a href="albums.html">Albums</a>
           <a href="poetry.html">Poetry</a>
           <a href="archive.html">Archive</a>
@@ -20,115 +19,61 @@
           <a href="about.html">About</a>
         </nav>
       </aside>
-      <!--TOPBAR; gorizontal nav that replaces the sidebar on tablet or mobile-->
-      <header class="topbar">
+
+      <header class="topbar" aria-label="Mobile top navigation">
         <div class="wrap">
           <a class="brand" href="../index.html">Trip Hop World</a>
-          <nav>
-            <a href="artists.html">Artists</a>
-            <a href="albums.html">Albums</a>
-            <a href="poetry.html">Poetry</a>
-            <a href="archive.html">Archive</a>
-            <a href="playlists.html">Playlists</a>
-            <a href="about.html">About</a>
+          <nav aria-label="Mobile site links">
+            <a href="artists.html">Artists</a><a href="albums.html">Albums</a>
           </nav>
         </div>
       </header>
 
-      <main class="content artists">
-        <!-- ARTIST HERO SECTION -->
+      <main class="content artist-profile">
         <section class="featured">
           <h1 class="featured-title">PORTISHEAD</h1>
           <figure class="featured-card">
             <img
               src="../assets/images/portishead_band.jpg"
-              alt="Portishead live – black and white photo"
-            />
-            <figcaption>Photo from a live gig · Bristol, UK</figcaption>
+              alt="Portishead"
+              loading="lazy"
+            >
           </figure>
         </section>
 
-        <!-- ARTIST BIO SECTION -->
-        <section class="bio">
-          <div class="wrap">
-            <h2>About Portishead</h2>
-            <div class="bio-body">
-              <p>
-                Portishead is an English band formed in 1991 in Bristol. The
-                band consists of Geoff Barrow, Beth Gibbons, and Adrian Utley.
-                They are considered one of the pioneers of the trip-hop genre,
-                known for their dark, atmospheric sound that combines elements
-                of hip-hop, jazz, and electronic music.
-              </p>
-              <p>
-                Their debut album "Dummy" (1994) was a critical and commercial
-                success, winning the Mercury Prize and establishing them as one
-                of the most influential acts in alternative music. The album's
-                haunting vocals by Beth Gibbons and innovative production
-                techniques created a unique sound that defined the trip-hop
-                movement.
-              </p>
-              <p>
-                Portishead's music is characterized by its cinematic quality,
-                with samples from old records, sparse drum programming, and
-                Gibbons' distinctive, emotionally charged vocals. Their sound
-                has influenced countless artists across various genres.
-              </p>
-            </div>
+        <section class="bio wrap">
+          <h2>The Haunting Bristol Sound</h2>
+          <p>
+            With Beth Gibbons' ethereal vocals and Geoff Barrow's cinematic
+            production, Portishead created the most atmospheric noir-soundtracks
+            of the 90s.
+          </p>
+        </section>
+
+        <section class="discography wrap">
+          <h2 class="section-title">Discography</h2>
+          <div class="album-layout">
+            <article class="album-card">
+              <div class="vinyl vinyl-lg">
+                <img src="../assets/images/Portishead_dummy.jpg" alt="Dummy">
+              </div>
+              <h3 class="album-title">Dummy (1994)</h3>
+            </article>
+            <article class="album-card">
+              <div class="vinyl vinyl-lg">
+                <img
+                  src="../assets/images/Portishead_portishead.jpg"
+                  alt="Self-titled"
+                >
+              </div>
+              <h3 class="album-title">Portishead (1997)</h3>
+            </article>
           </div>
         </section>
 
-        <!-- ESSENTIAL ALBUMS SECTION -->
-        <section class="albums">
-          <div class="wrap">
-            <h2 class="section-title">Essential Albums</h2>
-            <div class="album-layout">
-              <article class="album-card">
-                <div class="vinyl vinyl-lg">
-                  <img
-                    src="../assets/images/Portishead_dummy.jpg"
-                    alt="Portishead - Dummy album cover"
-                  />
-                </div>
-                <h3 class="album-title">Dummy (1994)</h3>
-                <p class="muted">Debut album · Mercury Prize winner</p>
-              </article>
-
-              <article class="album-card">
-                <div class="vinyl vinyl-lg">
-                  <img
-                    src="../assets/images/Portishead_portishead.jpg"
-                    alt="Portishead - Portishead album cover"
-                  />
-                </div>
-                <h3 class="album-title">Portishead (1997)</h3>
-                <p class="muted">Self-titled second album</p>
-              </article>
-
-              <article class="album-card">
-                <div class="vinyl vinyl-lg">
-                  <img
-                    src="../assets/images/Portishead_live1.jpg"
-                    alt="Portishead - Live album cover"
-                  />
-                </div>
-                <h3 class="album-title">Roseland NYC Live (1998)</h3>
-                <p class="muted">Live performance with orchestra</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <!-- SOFT FOOTER -->
-        <section class="soft-footer" arial-label="site note">
-          <div class="wrap">
-            <p>© 2025 Trip Hop World</p>
-            <p>
-              This website is for educational and non-commercial purposes only.
-              All images, music, and media belong to their respective owners.
-            </p>
-          </div>
-        </section>
+        <footer class="soft-footer" aria-label="Site note">
+          <div class="wrap"><p>© 2026 Trip Hop World</p></div>
+        </footer>
       </main>
     </div>
   </body>

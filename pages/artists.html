@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip Hop World – Artists</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
   </head>
   <body>
     <div class="page">
-      <!--SIDEBAR; same for all subpages-->
-      <aside class="nav">
+      <aside class="nav" aria-label="Primary sidebar navigation">
         <a class="brand" href="../index.html">Trip Hop World</a>
-        <nav>
+        <nav aria-label="Main site links">
           <a class="is-active" href="artists.html" aria-current="page"
             >Artists</a
           >
@@ -22,124 +21,52 @@
           <a href="about.html">About</a>
         </nav>
       </aside>
-      <!--TOPBAR; gorizontal nav that replaces the sidebar on tablet or mobile-->
-      <header class="topbar">
+      <header class="topbar" aria-label="Mobile top navigation">
         <div class="wrap">
           <a class="brand" href="../index.html">Trip Hop World</a>
-          <nav>
-            <a href="artists.html" aria-current="page">Artists</a>
-            <a href="albums.html">Albums</a>
-            <a href="poetry.html">Poetry</a>
-            <a href="archive.html">Archive</a>
-            <a href="playlists.html">Playlists</a>
-            <a href="about.html">About</a>
+          <nav aria-label="Mobile site links">
+            <a href="artists.html">Artists</a><a href="albums.html">Albums</a
+            ><a href="about.html">About</a>
           </nav>
         </div>
       </header>
-
       <main class="content artists">
-        <!-- FEATURED ARTIST, content for full version to be completed later-->
-        <section class="featured">
-          <h1 class="featured-title">PORTISHEAD</h1>
-          <figure class="featured-card">
-            <a href="portishead.html">
-              <img
-                src="../assets/images/portishead_band.jpg"
-                alt="Portishead live – black and white photo"
-              />
-            </a>
-            <figcaption>
-              Photo from a live gig ·
-              <a href="portishead.html" class="inline-link"
-                >Go to artist page ↗</a
-              >
-            </figcaption>
-          </figure>
-        </section>
-
-        <!-- CORE ICONS of TRO-HOP: 3 cards (Massive Attack, Tricky, UNKLE) -->
+        <h1 class="featured-title">The Architects</h1>
         <section class="core-icons">
           <article class="artist-card">
-            <a href="massive-attack.html">
-              <img
+            <a href="massive-attack.html"
+              ><img
                 src="../assets/images/Massive_Attack_band.jpg"
-                alt="Massive Attack live"
-              />
-              <h3>Massive Attack</h3>
-              <p class="muted">Photo — live gig</p>
-            </a>
+                alt="Massive Attack"
+              >
+              <h3>Massive Attack</h3></a
+            >
           </article>
-
           <article class="artist-card">
-            <a href="tricky.html">
-              <img src="../assets/images/Tricky.jpg" alt="Tricky live" />
-              <h3>Tricky</h3>
-              <p class="muted">Photo — live gig</p>
-            </a>
+            <a href="portishead.html"
+              ><img
+                src="../assets/images/portishead_band.jpg"
+                alt="Portishead"
+              >
+              <h3>Portishead</h3></a
+            >
           </article>
-
           <article class="artist-card">
-            <a href="unkle.html">
-              <img src="../assets/images/unkle.jpg" alt="UNKLE live" />
-              <h3>UNKLE</h3>
-              <p class="muted">Photo — live gig</p>
-            </a>
+            <a href="tricky.html"
+              ><img src="../assets/images/Tricky.jpg" alt="Tricky">
+              <h3>Tricky</h3></a
+            >
+          </article>
+          <article class="artist-card">
+            <a href="unkle.html"
+              ><img src="../assets/images/unkle.jpg" alt="UNKLE">
+              <h3>UNKLE</h3></a
+            >
           </article>
         </section>
-
-        <h2 class="section-title">The Main Representatives of Trip-Hop</h2>
-
-        <!-- WIDER REPRESENTATIVES: 5 cards inline-->
-        <section class="rep-grid">
-          <article class="artist-card">
-            <img
-              src="../assets/images/sneaker_pimps.jpg"
-              alt="Sneaker Pimps live"
-            />
-            <h3>Sneaker Pimps</h3>
-            <p class="muted">Photo — live gig</p>
-          </article>
-
-          <article class="artist-card">
-            <img
-              src="../assets/images/thievery_corporation.jpg"
-              alt="Thievery Corporation live"
-            />
-            <h3>Thievery Corporation</h3>
-            <p class="muted">Photo — live gig</p>
-          </article>
-
-          <article class="artist-card">
-            <img src="../assets/images/dj_shadow.jpg" alt="DJ Shadow live" />
-            <h3>DJ Shadow</h3>
-            <p class="muted">Photo — live gig</p>
-          </article>
-
-          <article class="artist-card">
-            <img
-              src="../assets/images/sofa_surfers.jpg"
-              alt="Sofa Surfers live"
-            />
-            <h3>Sofa Surfers</h3>
-            <p class="muted">Photo — live gig</p>
-          </article>
-
-          <article class="artist-card">
-            <img src="../assets/images/flunk.jpg" alt="Flunk live" />
-            <h3>Flunk</h3>
-            <p class="muted">Photo — live gig</p>
-          </article>
-        </section>
-        <!--Soft footer-->
-        <section class="soft-footer" arial-label="site note"></section>
-
-        <div class="wrap">
-          <p>© 2025 Trip Hop World</p>
-          <p>
-            This website is for educational and non-commercial purposes only.
-            All images, music, and media belong to their respective owners.
-          </p>
-        </div>
+        <footer class="soft-footer">
+          <div class="wrap"><p>© 2026 Trip Hop World</p></div>
+        </footer>
       </main>
     </div>
   </body>

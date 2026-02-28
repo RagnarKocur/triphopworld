@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trip Hop World — Poetry</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
   </head>
   <body>
     <div class="page">
-      <!--SIDEBAR-->
-      <aside class="nav">
+      <aside class="nav" aria-label="Primary sidebar navigation">
         <a class="brand" href="../index.html">Trip Hop World</a>
-        <nav>
+        <nav aria-label="Main site links">
           <a href="artists.html">Artists</a>
           <a href="albums.html">Albums</a>
           <a class="is-active" href="poetry.html" aria-current="page">Poetry</a>
@@ -21,88 +20,64 @@
         </nav>
       </aside>
 
-      <header class="topbar">
+      <header class="topbar" aria-label="Mobile top navigation">
         <div class="wrap">
           <a class="brand" href="../index.html">Trip Hop World</a>
-          <nav>
+          <nav aria-label="Mobile site links">
             <a href="artists.html">Artists</a>
-            <a href="albums.html">Albums</a>
             <a href="poetry.html" aria-current="page">Poetry</a>
-            <a href="archive.html">Archive</a>
-            <a href="playlists.html">Playlists</a>
             <a href="about.html">About</a>
           </nav>
         </div>
       </header>
 
-      <main>
-        <section class="poetry">
-          <div class="wrap">
-            <h1>Poetry</h1>
-            <p class="sub">
-              Lyrics that feel like smoke; words that sound like rain.
-            </p>
+      <main class="content poetry">
+        <div class="wrap">
+          <h1 class="section-title">Urban Poetry</h1>
 
-            <div class="poetry-grid">
-              <!--FIRST COLUMN-->
-              <article class="poetry-col">
-                <h2>Lyrics & Poems</h2>
-                <div class="poem-card">
-                  <h3>Portishead — Roads (fragment)</h3>
-                  <p>Oh, can't anybody see / We've got a war to fight...</p>
-                </div>
-                <div class="poem-card">
-                  <h3>Massive Attack — Teardrop (fragment)</h3>
-                  <p>Love, love is a verb / Love is a doing word...</p>
-                </div>
-              </article>
+          <div class="poetry-grid">
+            <article class="poetry-col">
+              <h2>The Void</h2>
+              <div class="poem-card">
+                <h3>Empty Streets</h3>
+                <p>
+                  Wet asphalt reflects the neon hum, a bassline echoes from a
+                  basement club...
+                </p>
+              </div>
+            </article>
 
-              <!--SECOND COLUMN-->
-              <article class="poetry-col">
-                <h2>Reflections</h2>
-                <div class="poem-card">
-                  <h3>On Gloom & Pulse</h3>
-                  <p>
-                    Trip-hop is a metronome in the fog — slow, precise,
-                    forgiving.
-                  </p>
-                </div>
-                <div class="poem-card">
-                  <h3>Textures</h3>
-                  <p>
-                    Vinyl crackle as negative space; breakbeats as
-                    scaffolding...
-                  </p>
-                </div>
-              </article>
+            <article class="poetry-col">
+              <h2>Melancholy</h2>
+              <div class="poem-card">
+                <h3>On Gloom &amp; Pulse</h3>
+                <p>
+                  Trip-hop is a metronome in the fog — slow, precise, forgiving.
+                </p>
+              </div>
+            </article>
 
-              <!--THIRD COLUMN-->
-              <article class="poetry-col">
-                <h2>Fusion</h2>
-                <div class="poem-card">
-                  <h3>Jazz × Hip-hop</h3>
-                  <p>
-                    Brushes on snare, a Rhodes sigh, and a bassline that doesn’t
-                    hurry.
-                  </p>
-                </div>
-                <a class="btn" href="#" aria-disabled="true"
-                  >Audio (in progress)</a
-                >
-              </article>
-            </div>
+            <article class="poetry-col">
+              <h2>Fusion</h2>
+              <div class="poem-card">
+                <h3>Jazz × Hip-hop</h3>
+                <p>
+                  Brushes on snare, a Rhodes sigh, and a bassline that doesn’t
+                  hurry.
+                </p>
+              </div>
+              <button type="button" class="btn btn-disabled" disabled>
+                Audio (in progress)
+              </button>
+            </article>
           </div>
-        </section>
-        <!--Soft footer-->
-        <section class="soft-footer" arial-label="site note">
+        </div>
+
+        <footer class="soft-footer" aria-label="Site note">
           <div class="wrap">
-            <p>© 2025 Trip Hop World</p>
-            <p>
-              This website is for educational and non-commercial purposes only.
-              All images, music, and media belong to their respective owners.
-            </p>
+            <p>© 2026 Trip Hop World</p>
           </div>
-        </section>
+        </footer>
       </main>
     </div>
   </body>

@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip Hop World – About</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
   </head>
   <body>
     <div class="page">
-      <!-- NAV -->
-      <aside class="nav">
+      <aside class="nav" aria-label="Primary sidebar navigation">
         <a class="brand" href="../index.html">Trip Hop World</a>
-        <nav>
+        <nav aria-label="Main site links">
           <a href="artists.html">Artists</a>
           <a href="albums.html">Albums</a>
           <a href="poetry.html">Poetry</a>
@@ -21,41 +20,29 @@
         </nav>
       </aside>
 
-      <!-- TOPBAR -->
-      <header class="topbar">
+      <header class="topbar" aria-label="Mobile top navigation">
         <div class="wrap">
           <a class="brand" href="../index.html">Trip Hop World</a>
-          <nav>
+          <nav aria-label="Mobile site links">
             <a href="artists.html">Artists</a>
             <a href="albums.html">Albums</a>
-            <a href="poetry.html">Poetry</a>
-            <a href="archive.html">Archive</a>
-            <a href="playlists.html">Playlists</a>
             <a href="about.html" aria-current="page">About</a>
           </nav>
         </div>
       </header>
 
       <main class="content about">
-        <!-- HERO: foto autora -->
-        <section class="about-hero card">
-          <figure class="about-photo">
-            <img
-              src="../assets/images/Selfportrait.JPG"
-              alt="Sebastian — author of Trip-Hop World"
-            />
-          </figure>
-          <div class="about-hero-text">
-            <h1>About the Author</h1>
+        <section class="about-hero">
+          <div class="wrap">
+            <h1 class="section-title">About the Author</h1>
             <p class="muted">
               Photographer • Interior Designer • Aspiring Full-Stack Dev
             </p>
           </div>
         </section>
 
-        <!-- BIO blok -->
-        <section class="bio card">
-          <h2 class="section-title">Bio</h2>
+        <section class="bio card wrap">
+          <h2 class="section-title">The Project</h2>
           <div class="bio-body">
             <p>
               Trip-Hop World is a personal, curated space where jazz textures
@@ -65,27 +52,25 @@
             <p>
               This site is built in black &amp; white aesthetics: documentary
               text, poetry fragments, archival links, and hand-picked playlists.
-              Designed &amp; coded with care.
+              Designed &amp; coded with care in Dublin.
             </p>
           </div>
         </section>
 
-        <!-- Quote strip -->
         <section class="quote-strip">
-          <blockquote>
-            <p>“Trip-hop is the poetry of the urban night.”</p>
-          </blockquote>
-        </section>
-        <!-- Soft footer (inline styles, zero layout impact) -->
-        <section class="soft-footer" arial-label="site note">
           <div class="wrap">
-            <p>© 2025 Trip Hop World</p>
-            <p>
-              This website is for educational and non-commercial purposes only.
-              All images, music, and media belong to their respective owners.
-            </p>
+            <blockquote>
+              <p>“Trip-hop is the poetry of the urban night.”</p>
+            </blockquote>
           </div>
         </section>
+
+        <footer class="soft-footer" aria-label="Site note">
+          <div class="wrap">
+            <p>© 2026 Trip Hop World</p>
+            <p>Educational and non-commercial project.</p>
+          </div>
+        </footer>
       </main>
     </div>
   </body>

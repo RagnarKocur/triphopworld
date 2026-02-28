@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip Hop World – Playlists</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
   </head>
   <body>
     <div class="page">
-      <!-- NAV -->
-      <aside class="nav">
+      <aside class="nav" aria-label="Primary sidebar navigation">
         <a class="brand" href="../index.html">Trip Hop World</a>
-        <nav>
+        <nav aria-label="Main site links">
           <a href="artists.html">Artists</a>
           <a href="albums.html">Albums</a>
           <a href="poetry.html">Poetry</a>
@@ -23,121 +22,74 @@
         </nav>
       </aside>
 
-      <!-- TOPBAR -->
-      <header class="topbar">
+      <header class="topbar" aria-label="Mobile top navigation">
         <div class="wrap">
           <a class="brand" href="../index.html">Trip Hop World</a>
-          <nav>
+          <nav aria-label="Mobile site links">
             <a href="artists.html">Artists</a>
             <a href="albums.html">Albums</a>
-            <a href="poetry.html">Poetry</a>
-            <a href="archive.html">Archive</a>
             <a href="playlists.html" aria-current="page">Playlists</a>
-            <a href="about.html">About</a>
           </nav>
         </div>
       </header>
 
       <main class="content playlists">
-        <h1 class="section-title">Trip-Hop Playlists</h1>
+        <div class="wrap">
+          <h1 class="section-title">Curated Playlists</h1>
+          <p class="muted">Atmospheric selections for the urban night.</p>
 
-        <!-- 3 okrągłe sekcje: Mood / Curator Picks / Legacy Mixes -->
-        <section class="playlist-sections">
-          <!-- Mood Playlists -->
-          <article class="playlist-circle card">
-            <div class="vinyl vinyl-lg">
-              <img
-                src="../assets/images/playlists/mood.jpg"
-                alt="Mood playlists cover"
-              />
-              <span class="label">Mood<br />Playlists</span>
-            </div>
-            <ul class="playlist-links">
-              <!-- podmień na prawdziwe linki -->
-              <li>
-                <a class="inline-link" href="#" target="_blank" rel="noopener"
-                  >Rainy City</a
+          <section class="playlist-grid">
+            <article class="playlist-card card">
+              <div class="vinyl vinyl-lg">
+                <img
+                  src="../assets/images/playlists/selection_01.jpg"
+                  alt="Night Drive Selection"
                 >
-              </li>
-              <li>
-                <a class="inline-link" href="#" target="_blank" rel="noopener"
-                  >Night Drive</a
-                >
-              </li>
-              <li>
-                <a class="inline-link" href="#" target="_blank" rel="noopener"
-                  >Smoky Room</a
-                >
-              </li>
-            </ul>
-          </article>
+                <span class="label">Night<br>Drive</span>
+              </div>
+              <ul class="playlist-links">
+                <li>
+                  <a class="inline-link" href="#" target="_blank"
+                    >Listen on Spotify</a
+                  >
+                </li>
+                <li>
+                  <a class="inline-link" href="#" target="_blank"
+                    >Listen on YouTube</a
+                  >
+                </li>
+              </ul>
+            </article>
 
-          <!-- Curator Picks -->
-          <article class="playlist-circle card">
-            <div class="vinyl vinyl-lg">
-              <img
-                src="../assets/images/playlists/curator.jpg"
-                alt="Curator picks cover"
-              />
-              <span class="label">Curator<br />Picks</span>
-            </div>
-            <ul class="playlist-links">
-              <li>
-                <a class="inline-link" href="#" target="_blank" rel="noopener"
-                  >Sebastian • Essentials</a
+            <article class="playlist-card card">
+              <div class="vinyl vinyl-lg">
+                <img
+                  src="../assets/images/playlists/legacy.jpg"
+                  alt="Legacy Mixes"
                 >
-              </li>
-              <li>
-                <a class="inline-link" href="#" target="_blank" rel="noopener"
-                  >Deep Cuts</a
-                >
-              </li>
-              <li>
-                <a class="inline-link" href="#" target="_blank" rel="noopener"
-                  >Live Gems</a
-                >
-              </li>
-            </ul>
-          </article>
+                <span class="label">Legacy<br>Mixes</span>
+              </div>
+              <ul class="playlist-links">
+                <li>
+                  <a class="inline-link" href="#" target="_blank"
+                    >Bristol Tapes</a
+                  >
+                </li>
+                <li>
+                  <a class="inline-link" href="#" target="_blank"
+                    >Mixtape 1996</a
+                  >
+                </li>
+              </ul>
+            </article>
+          </section>
+        </div>
 
-          <!-- Legacy Mixes -->
-          <article class="playlist-circle card">
-            <div class="vinyl vinyl-lg">
-              <img
-                src="../assets/images/playlists/legacy.jpg"
-                alt="Legacy mixes cover"
-              />
-              <span class="label">Legacy<br />Mixes</span>
-            </div>
-            <ul class="playlist-links">
-              <li>
-                <a class="inline-link" href="#" target="_blank" rel="noopener"
-                  >Bristol Tapes</a
-                >
-              </li>
-              <li>
-                <a class="inline-link" href="#" target="_blank" rel="noopener"
-                  >Mixtape 1996</a
-                >
-              </li>
-              <li>
-                <a class="inline-link" href="#" target="_blank" rel="noopener"
-                  >Underground Radio</a
-                >
-              </li>
-            </ul>
-          </article>
-        </section>
-        <!-- Soft footer (inline styles, zero layout impact) -->
-        <section class="soft-footer" arial-label="site note">
+        <footer class="soft-footer" aria-label="Site note">
           <div class="wrap">
-            <p>© 2025 Trip Hop World</p>
-            <p>
-              This website is for educational and non-commercial purposes only.
-              All images, music, and media belong to their respective owners.
-            </p>
+            <p>© 2026 Trip Hop World</p>
           </div>
-        </section>
+        </footer>
       </main>
     </div>
   </body>

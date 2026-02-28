@@ -1,21 +1,16 @@
-<!-- Responsive layout: sidebar (desktop) switches to topbar (tablet/mobile).
-     Implemented with CSS grid + media queries at 1024px and 767px. -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Trip Hop World — Home</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trip Hop World — The Bristol Sound &amp; Beyond</title>
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <!--Page WRAPPer; sets general rule to sidebar and content layuot-->
     <div class="page">
-      <!-- SIDEBAR NAV; vertical menu shown on desktop contains all links to subpages-->
-      <aside class="nav">
+      <aside class="nav" aria-label="Primary sidebar navigation">
         <a class="brand" href="index.html">Trip Hop World</a>
-        <nav>
+        <nav aria-label="Main site links">
           <a href="pages/artists.html">Artists</a>
           <a href="pages/albums.html">Albums</a>
           <a href="pages/poetry.html">Poetry</a>
@@ -24,39 +19,30 @@
           <a href="pages/about.html">About</a>
         </nav>
       </aside>
-      <!--TOPBAR; gorizontal nav that replaces the sidebar on tablet or mobile-->
-      <header class="topbar">
+
+      <header class="topbar" aria-label="Mobile top navigation">
         <div class="wrap">
           <a class="brand" href="index.html">Trip Hop World</a>
-          <!--Compact navigation for smaller screens-->
-          <nav>
+          <nav aria-label="Mobile site links">
             <a href="pages/artists.html">Artists</a>
             <a href="pages/albums.html">Albums</a>
-            <a href="pages/poetry.html">Poetry</a>
-            <a href="pages/archive.html">Archive</a>
-            <a href="pages/playlists.html">Playlists</a>
             <a href="pages/about.html">About</a>
           </nav>
         </div>
       </header>
 
       <main>
-        <!--HERO VIDEO; muted, looping background video with dark overlay-->
         <section class="hero">
           <video
             id="heroVideo"
             class="hero-video"
             src="assets/video/hero2.mov"
-            type="video/mp4"
-            autoplay
             muted
             loop
             playsinline
-            preload="metadata"
+            preload="auto"
           ></video>
-
           <div class="hero-overlay"></div>
-
           <div class="hero-text">
             <h1 class="site-title">Trip Hop World</h1>
             <p class="site-tagline">
@@ -66,73 +52,81 @@
               <a class="btn btn-primary" href="pages/albums.html"
                 >Explore essential albums</a
               >
-              <a class="btn" href="pages/about.html">About</a>
+              <button
+                type="button"
+                id="toggle-audio"
+                class="btn btn-secondary"
+                aria-pressed="false"
+              >
+                🔈 Sound On
+              </button>
             </div>
           </div>
         </section>
 
-        <!--4 FEATURED ARTISTS; clickable cards linking to Artist page-->
         <section class="featured wrap">
           <h2 class="featured-title">Featured Artists</h2>
           <div class="featured-grid">
             <article class="feature-card">
               <a href="pages/unkle.html" class="feature-link">
-                <img src="assets/images/unkle.jpg" alt="UNKLE — live" />
+                <img
+                  src="assets/images/unkle.jpg"
+                  alt="UNKLE live"
+                  loading="lazy"
+                >
                 <h3>UNKLE</h3>
               </a>
             </article>
-
             <article class="feature-card">
               <a href="pages/portishead.html" class="feature-link">
                 <img
                   src="assets/images/portishead_band.jpg"
-                  alt="Portishead — live"
-                />
+                  alt="Portishead live"
+                  loading="lazy"
+                >
                 <h3>Portishead</h3>
               </a>
             </article>
-
             <article class="feature-card">
               <a href="pages/massive-attack.html" class="feature-link">
                 <img
                   src="assets/images/Massive_Attack_band.jpg"
-                  alt="Massive Attack — live"
-                />
+                  alt="Massive Attack live"
+                  loading="lazy"
+                >
                 <h3>Massive Attack</h3>
               </a>
             </article>
-
             <article class="feature-card">
               <a href="pages/tricky.html" class="feature-link">
-                <img src="assets/images/Tricky.jpg" alt="Tricky — live" />
+                <img
+                  src="assets/images/Tricky.jpg"
+                  alt="Tricky live"
+                  loading="lazy"
+                >
                 <h3>Tricky</h3>
               </a>
             </article>
           </div>
         </section>
-        <!--SOFT FOOTER; Difficuty to manage proper footer, crash present layout, to be sorted later-->
-        <section class="soft-footer" arial-label="site note">
+
+        <footer class="soft-footer" aria-label="Site note">
           <div class="wrap">
-            <p>© 2025 Trip Hop World</p>
-            <p>
-              This website is for educational and non-commercial purposes only.
-              All images, music, and media belong to their respective owners.
-            </p>
+            <p>© 2026 Trip Hop World</p>
+            <p>Educational project. No fluff. No mercy.</p>
           </div>
-        </section>
+        </footer>
       </main>
-      <!--SMALL SCRIPT; toggles hero video sound (accessibitiy friendly)-->
-      <script>
-        const btn = document.getElementById("toggle-audio");
-        const vid = document.querySelector(".hero-video");
-        btn?.addEventListener("click", () => {
-          vid.muted = !vid.muted;
-          const on = vid.muted ? "off" : "on";
-          btn.textContent = vid.muted ? "🔈 Sound off" : "🔊 Sound on";
-          btn.setAttribute("aria-pressed", String(!vid.muted));
-        });
-      </script>
     </div>
-    <!--Page Closing-->
+    <script>
+      const vid = document.getElementById("heroVideo");
+      if (vid) vid.play().catch(() => {});
+      const btn = document.getElementById("toggle-audio");
+      btn?.addEventListener("click", () => {
+        vid.muted = !vid.muted;
+        btn.textContent = vid.muted ? "🔈 Sound On" : "🔊 Sound Off";
+        btn.setAttribute("aria-pressed", String(!vid.muted));
+      });
+    </script>
   </body>
 </html>
